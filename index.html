@@ -136,61 +136,23 @@ body {
 
 /* ── HERO ── */
 .hero {
-  position: relative;
-  min-height: 480px;
-  display: flex;
-  align-items: center;
+  display: block;
   overflow: hidden;
 }
-.hero-bg {
-  position: absolute;
-  inset: 0;
-      background-image: url('https://raw.githubusercontent.com/mikehinsvark/family-legacy/main/images/legacy_banner.webp');
-  background-size: cover;
-  background-position: center 30%;
-  filter: brightness(0.35) saturate(0.7);
+.hero-banner {
+  width: 100%;
+  display: block;
+  border-bottom: 2px solid var(--gold);
 }
-.hero-overlay {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(135deg, rgba(5,13,20,0.85) 0%, rgba(7,21,32,0.5) 60%, transparent 100%);
-}
-.hero-content {
-  position: relative;
-  z-index: 2;
-  padding: 60px 48px;
-  max-width: 680px;
-}
-.hero-eyebrow {
-  font-family: 'DM Mono', monospace;
-  font-size: 10px;
-  letter-spacing: 3px;
-  color: var(--teal);
-  text-transform: uppercase;
-  margin-bottom: 16px;
-}
-.hero-title {
-  font-family: 'Cinzel', serif;
-  font-size: clamp(32px, 5vw, 56px);
-  font-weight: 700;
-  color: var(--cream);
-  line-height: 1.15;
-  margin-bottom: 20px;
-}
-.hero-title span { color: var(--gold); }
-.hero-sub {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 20px;
-  color: var(--text);
-  line-height: 1.65;
-  margin-bottom: 32px;
-  max-width: 540px;
-}
-.hero-badges {
+.hero-cta-bar {
+  background: var(--navy-card);
+  border-bottom: 1px solid var(--navy-border);
+  padding: 24px 48px;
   display: flex;
-  gap: 12px;
+  align-items: center;
+  justify-content: space-between;
   flex-wrap: wrap;
-  margin-bottom: 32px;
+  gap: 16px;
 }
 .badge {
   font-family: 'DM Mono', monospace;
@@ -646,19 +608,18 @@ body {
 
   <!-- HERO -->
   <section class="hero" id="hero">
-    <div class="hero-bg"></div>
-    <div class="hero-overlay"></div>
-    <div class="hero-content">
-      <div class="hero-eyebrow">// Your Family's Permanent Legacy</div>
-      <h1 class="hero-title">Leave Something<br><span>That Lasts Forever.</span></h1>
-      <p class="hero-sub">Three powerful documents. One guided conversation with AI. A legacy your family will treasure for generations — completed in minutes, kept forever.</p>
+    <img class="hero-banner" src="https://raw.githubusercontent.com/mikehinsvark/family-legacy/main/images/legacy_banner.webp" alt="What Will Your Family Remember You Built? — Family Legacy Program" />
+    <div class="hero-cta-bar">
       <div class="hero-badges">
         <span class="badge badge-teal">✓ Completely Free</span>
         <span class="badge badge-gold">✓ AI-Powered by Claude</span>
         <span class="badge badge-green">✓ Done in Minutes</span>
+        <span class="badge badge-teal">✓ 3 Documents in 8 Minutes</span>
       </div>
-      <a class="btn-primary" href="https://claude.ai/project/01JTHKDMQBG2QNKDMJ6RQHQ8H" target="_blank" rel="noopener">▶ Start Building My Legacy</a>
-      <a class="btn-secondary" href="#how-it-works">See How It Works</a>
+      <div style="display:flex;gap:12px;flex-wrap:wrap;align-items:center;">
+        <a class="btn-primary" href="https://claude.ai/project/01JTHKDMQBG2QNKDMJ6RQHQ8H" target="_blank" rel="noopener">▶ Start Building My Legacy</a>
+        <a class="btn-secondary" href="#how-it-works">See How It Works</a>
+      </div>
     </div>
   </section>
 
