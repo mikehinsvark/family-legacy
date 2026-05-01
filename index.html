@@ -480,6 +480,433 @@ body {
   margin-top: 20px;
 }
 
+/* ── WIZARD BUILDER ── */
+.builder-sec {
+  padding: 72px 48px;
+  background: linear-gradient(180deg, var(--navy-deep) 0%, #071520 100%);
+  border-bottom: 1px solid var(--navy-border);
+}
+.builder-sec .s-eye {
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 3px;
+  color: var(--teal);
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+.builder-sec .s-h2 {
+  font-family: 'Cinzel', serif;
+  font-size: clamp(28px, 4vw, 42px);
+  font-weight: 700;
+  color: var(--cream);
+  margin-bottom: 10px;
+  line-height: 1.2;
+}
+.builder-sec .s-h2 em { color: var(--gold); font-style: italic; }
+.builder-sec .s-sub {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 18px;
+  color: var(--text);
+  margin-bottom: 40px;
+}
+.bw {
+  max-width: 720px;
+  margin: 0 auto;
+}
+/* Progress bar */
+.prog {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 40px;
+  position: relative;
+}
+.prog::before {
+  content: '';
+  position: absolute;
+  top: 18px;
+  left: 18px;
+  right: 18px;
+  height: 1px;
+  background: var(--navy-border);
+  z-index: 0;
+}
+.pstep {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  position: relative;
+  z-index: 1;
+}
+.pdot {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 2px solid var(--navy-border);
+  background: var(--navy-deep);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'DM Mono', monospace;
+  font-size: 12px;
+  color: var(--dim);
+  transition: all 0.3s;
+}
+.pstep.act .pdot {
+  border-color: var(--teal);
+  background: rgba(45,212,191,0.12);
+  color: var(--teal);
+  box-shadow: 0 0 12px rgba(45,212,191,0.3);
+}
+.pstep.done .pdot {
+  border-color: var(--gold);
+  background: rgba(201,168,76,0.12);
+  color: var(--gold);
+}
+.plabel {
+  font-family: 'DM Mono', monospace;
+  font-size: 9px;
+  letter-spacing: 1.5px;
+  color: var(--dim);
+  text-transform: uppercase;
+}
+.pstep.act .plabel { color: var(--teal); }
+.pstep.done .plabel { color: var(--gold); }
+/* Panels */
+.panel { display: none; }
+.panel.act { display: block; }
+.ph { margin-bottom: 28px; }
+.ptag {
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 2.5px;
+  color: var(--teal);
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: 10px;
+}
+.ptitle {
+  font-family: 'Cinzel', serif;
+  font-size: 26px;
+  font-weight: 600;
+  color: var(--cream);
+  margin-bottom: 8px;
+}
+.phint {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 17px;
+  color: var(--text);
+  line-height: 1.6;
+}
+/* Form fields */
+.fg { margin-bottom: 20px; }
+.frow { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 20px; }
+.fl {
+  display: block;
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 2px;
+  color: var(--teal);
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+.fsl {
+  display: block;
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 14px;
+  color: var(--dim);
+  margin-bottom: 8px;
+  line-height: 1.5;
+}
+.fi, .fta {
+  width: 100%;
+  background: var(--navy-card);
+  border: 1px solid var(--navy-border);
+  border-radius: 6px;
+  padding: 12px 16px;
+  font-family: 'Crimson Pro', serif;
+  font-size: 16px;
+  color: var(--cream);
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+.fi:focus, .fta:focus {
+  border-color: var(--teal);
+  box-shadow: 0 0 0 3px rgba(45,212,191,0.1);
+}
+.fi::placeholder, .fta::placeholder { color: var(--dim); font-style: italic; }
+.fta { resize: vertical; min-height: 100px; line-height: 1.6; }
+/* Cause options */
+.cg {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  margin-top: 8px;
+}
+.co {
+  background: var(--navy-card);
+  border: 1px solid var(--navy-border);
+  border-radius: 6px;
+  padding: 12px 14px;
+  cursor: pointer;
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 1px;
+  color: var(--text);
+  text-transform: uppercase;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.co:hover { border-color: var(--gold); color: var(--gold); }
+.co.sel { border-color: var(--teal); color: var(--teal); background: rgba(45,212,191,0.06); }
+.cb {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  border: 2px solid currentColor;
+  flex-shrink: 0;
+  position: relative;
+}
+.co.sel .cb::after {
+  content: '';
+  position: absolute;
+  top: 2px; left: 2px;
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: var(--teal);
+}
+/* Step nav */
+.snav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 32px;
+  padding-top: 24px;
+  border-top: 1px solid var(--navy-border);
+}
+.btn-next {
+  background: var(--teal);
+  color: var(--navy-deep);
+  border: none;
+  border-radius: 6px;
+  padding: 14px 28px;
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background 0.2s, transform 0.15s;
+}
+.btn-next:hover { background: var(--gold); transform: translateY(-1px); }
+.btn-back {
+  background: transparent;
+  color: var(--dim);
+  border: 1px solid var(--navy-border);
+  border-radius: 6px;
+  padding: 12px 22px;
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: color 0.2s, border-color 0.2s;
+}
+.btn-back:hover { color: var(--text); border-color: var(--text); }
+/* Review box */
+.rv-box {
+  background: var(--navy-card);
+  border: 1px solid var(--navy-border);
+  border-radius: 8px;
+  padding: 24px 28px;
+  margin-bottom: 24px;
+}
+.rv-row {
+  display: flex;
+  gap: 16px;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--navy-border);
+  font-size: 15px;
+}
+.rv-row:last-child { border-bottom: none; }
+.rv-k {
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 1.5px;
+  color: var(--teal);
+  text-transform: uppercase;
+  min-width: 140px;
+  padding-top: 2px;
+}
+.rv-v {
+  font-family: 'Crimson Pro', serif;
+  color: var(--cream);
+  font-size: 15px;
+  line-height: 1.5;
+  flex: 1;
+}
+/* Generating panel */
+.gen-st {
+  text-align: center;
+  padding: 60px 20px;
+}
+.spinner {
+  width: 48px;
+  height: 48px;
+  border: 3px solid var(--navy-border);
+  border-top-color: var(--teal);
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+  margin: 0 auto 24px;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+.gm {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 20px;
+  color: var(--cream);
+  margin-bottom: 8px;
+}
+.gsub {
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 3px;
+  color: var(--teal);
+  text-transform: uppercase;
+  margin-bottom: 28px;
+}
+.gbar {
+  width: 100%;
+  max-width: 400px;
+  height: 4px;
+  background: var(--navy-border);
+  border-radius: 2px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+.gfill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--teal), var(--gold));
+  border-radius: 2px;
+  width: 0;
+  transition: width 0.3s;
+}
+/* Done panel */
+.done-st {
+  text-align: center;
+  padding: 48px 20px;
+}
+.d-orn {
+  font-family: 'DM Mono', monospace;
+  font-size: 18px;
+  color: var(--gold);
+  letter-spacing: 8px;
+  margin-bottom: 20px;
+}
+.d-title {
+  font-family: 'Cinzel', serif;
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--cream);
+  margin-bottom: 12px;
+}
+.d-sub {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 18px;
+  color: var(--text);
+  max-width: 520px;
+  margin: 0 auto 32px;
+  line-height: 1.6;
+}
+.d-docs {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-width: 480px;
+  margin: 0 auto 32px;
+  text-align: left;
+}
+.d-doc {
+  background: var(--navy-card);
+  border: 1px solid var(--navy-border);
+  border-radius: 6px;
+  padding: 14px 18px;
+  font-family: 'Crimson Pro', serif;
+  font-size: 15px;
+  color: var(--text);
+  display: flex;
+  gap: 12px;
+  align-items: baseline;
+}
+.d-doc strong {
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 1.5px;
+  color: var(--teal);
+  text-transform: uppercase;
+  min-width: 90px;
+}
+.btn-dl {
+  background: var(--gold);
+  color: var(--navy-deep);
+  border: none;
+  border-radius: 6px;
+  padding: 16px 36px;
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background 0.2s, transform 0.15s;
+  margin-bottom: 16px;
+  display: block;
+  margin: 0 auto 16px;
+}
+.btn-dl:hover { background: var(--teal); transform: translateY(-1px); }
+.restart {
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 1.5px;
+  color: var(--dim);
+  text-transform: uppercase;
+  cursor: pointer;
+  display: block;
+  margin-top: 16px;
+  text-decoration: underline;
+}
+.restart:hover { color: var(--text); }
+/* Cause display note */
+#cd { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 15px; color: var(--dim); margin-top: 8px; }
+#cd strong { color: var(--gold); font-style: normal; }
+/* Cause info box */
+.cause-info {
+  background: rgba(201,168,76,0.06);
+  border: 1px solid rgba(201,168,76,0.2);
+  padding: 14px 18px;
+  margin-top: 12px;
+  border-radius: 6px;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 15px;
+  color: var(--text);
+  font-style: italic;
+  line-height: 1.6;
+}
+.cause-info strong { color: var(--gold); font-style: normal; }
+@media (max-width: 600px) {
+  .builder-sec { padding: 48px 20px; }
+  .frow { grid-template-columns: 1fr; }
+  .cg { grid-template-columns: repeat(2, 1fr); }
+  .prog::before { display: none; }
+  .plabel { display: none; }
+}
+
 /* ── FOOTER ── */
 .footer {
   padding: 32px 48px;
@@ -767,11 +1194,176 @@ body {
     </blockquote>
   </div>
 
+  <!-- WIZARD BUILDER -->
+  <section class="builder-sec fade-up" id="builder">
+    <div class="si">
+      <p class="s-eye">// The Builder</p>
+      <h2 class="s-h2">Your Legacy, <em>Step by Step</em></h2>
+      <p class="s-sub">Answer a few questions. We write the rest. Takes about 8 minutes.</p>
+      <div class="bw">
+        <!-- PROGRESS BAR -->
+        <div class="prog" id="prog">
+          <div class="pstep act" data-s="1"><div class="pdot act">1</div><span class="plabel">Names</span></div>
+          <div class="pstep" data-s="2"><div class="pdot">2</div><span class="plabel">Stories</span></div>
+          <div class="pstep" data-s="3"><div class="pdot">3</div><span class="plabel">Beliefs</span></div>
+          <div class="pstep" data-s="4"><div class="pdot">4</div><span class="plabel">Causes</span></div>
+          <div class="pstep" data-s="5"><div class="pdot">5</div><span class="plabel">Review</span></div>
+        </div>
+        <!-- STEP 1 — NAMES -->
+        <div class="panel act" id="s1">
+          <div class="ph">
+            <span class="ptag">Step 1 of 5 — Names &amp; Family</span>
+            <h3 class="ptitle">Let's start with your family.</h3>
+            <p class="phint">Your names become the foundation of every page. Just fill in who you are — this is the easy part.</p>
+          </div>
+          <div class="frow">
+            <div class="fg"><label class="fl">Husband / Founder's First Name *</label><input class="fi" id="v-h" placeholder="e.g. Michael" type="text"/></div>
+            <div class="fg"><label class="fl">Wife / Co-Founder's First Name *</label><input class="fi" id="v-w" placeholder="e.g. Mary Ann" type="text"/></div>
+          </div>
+          <div class="fg">
+            <label class="fl">Family Last Name *</label>
+            <span class="fsl">This becomes your Foundation name — e.g. "Hinsvark Family Foundation"</span>
+            <input class="fi" id="v-l" placeholder="e.g. Hinsvark" type="text"/>
+          </div>
+          <div class="fg">
+            <label class="fl">Children's Names</label>
+            <span class="fsl">Separate with commas. They'll be named in the Founder's Letter.</span>
+            <input class="fi" id="v-c" placeholder="e.g. Alexa, Amber" type="text"/>
+          </div>
+          <div class="fg">
+            <label class="fl">Grandchildren's Names</label>
+            <span class="fsl">The ones who'll inherit the mission one day.</span>
+            <input class="fi" id="v-g" placeholder="e.g. Jayson, Gavin, Logan, Camdon" type="text"/>
+          </div>
+          <div class="fg">
+            <label class="fl">Pet Names</label>
+            <span class="fsl">Dogs, cats, all of them — they're part of the story.</span>
+            <input class="fi" id="v-p" placeholder="e.g. Ace, Sapphire" type="text"/>
+          </div>
+          <div class="snav"><div></div><button class="btn-next" onclick="go(2)">Continue: Your Stories →</button></div>
+        </div>
+        <!-- STEP 2 — STORIES -->
+        <div class="panel" id="s2">
+          <div class="ph">
+            <span class="ptag">Step 2 of 5 — Your Stories</span>
+            <h3 class="ptitle">Tell us your story.</h3>
+            <p class="phint">These become the heart of your Founder's Letter. Be real. Even a few sentences become powerful when they're yours.</p>
+          </div>
+          <div class="fg">
+            <label class="fl" id="lbl-h">Founder's Story (Husband)</label>
+            <span class="fsl">What shaped him? A defining moment, a calling — the thing that changed how he saw the world.</span>
+            <textarea class="fta" id="v-sh" placeholder="e.g. For Mike, it started with a dog at age seven. Every dog since then has been a teacher — a daily reminder that unconditional love is real..." rows="5"></textarea>
+          </div>
+          <div class="fg" style="margin-top:1.2rem;">
+            <label class="fl" id="lbl-w">Co-Founder's Story (Wife)</label>
+            <span class="fsl">Her origin story — what drives her to protect animals, children, or whatever cause she loves most.</span>
+            <textarea class="fta" id="v-sw" placeholder="e.g. Mary Ann has always had a connection to strays. She has a way of seeing the overlooked, making the forgotten feel seen..." rows="5"></textarea>
+          </div>
+          <div class="snav"><button class="btn-back" onclick="go(1)">← Back</button><button class="btn-next" onclick="go(3)">Continue: Your Beliefs →</button></div>
+        </div>
+        <!-- STEP 3 — BELIEFS -->
+        <div class="panel" id="s3">
+          <div class="ph">
+            <span class="ptag">Step 3 of 5 — Spiritual Foundation</span>
+            <h3 class="ptitle">What do you believe?</h3>
+            <p class="phint">Not a sermon — just the truth of what you hold dear. How does faith or a sense of something larger shape why you're building this?</p>
+          </div>
+          <div class="fg">
+            <label class="fl">Your Spiritual &amp; Philosophical Foundation</label>
+            <span class="fsl">Write it in your own voice. Religious, philosophical, or simply a deep knowing — whatever is true for you is the right answer.</span>
+            <textarea class="fta" id="v-b" placeholder="e.g. We believe in something larger than ourselves. We don't claim to have all the answers, but we know we are connected — to each other, to the animals, to this creation..." rows="6"></textarea>
+          </div>
+          <div class="fg" style="margin-top:1.2rem;">
+            <label class="fl">A Message to Your Grandchildren <span style="color:var(--dim);font-style:italic;font-size:12px;">(optional)</span></label>
+            <span class="fsl">One thing you want them to know about wealth, purpose, or life.</span>
+            <textarea class="fta" id="v-gm" placeholder="e.g. The wealth is not the point. The mission is the point. The wealth is just how we fund it..." rows="3"></textarea>
+          </div>
+          <div class="snav"><button class="btn-back" onclick="go(2)">← Back</button><button class="btn-next" onclick="go(4)">Continue: Choose Your Causes →</button></div>
+        </div>
+        <!-- STEP 4 — CAUSES -->
+        <div class="panel" id="s4">
+          <div class="ph">
+            <span class="ptag">Step 4 of 5 — Your Causes</span>
+            <h3 class="ptitle">What do you want to protect?</h3>
+            <p class="phint">Pick two cause categories. We include the top 15 independently rated charities for each — ready for your family to fund for generations.</p>
+          </div>
+          <div class="fg">
+            <label class="fl">Cause Category 1 *</label>
+            <div class="cg" id="cg1">
+              <div class="co sel" onclick="pc(1,'Animal Welfare',this)"><div class="cb"></div>Animal Welfare</div>
+              <div class="co" onclick="pc(1,'Child Protection',this)"><div class="cb"></div>Child Protection</div>
+              <div class="co" onclick="pc(1,'Veterans',this)"><div class="cb"></div>Veterans</div>
+              <div class="co" onclick="pc(1,'Environment',this)"><div class="cb"></div>Environment</div>
+              <div class="co" onclick="pc(1,'Medical Research',this)"><div class="cb"></div>Medical Research</div>
+              <div class="co" onclick="pc(1,'Education',this)"><div class="cb"></div>Education</div>
+              <div class="co" onclick="pc(1,'Hunger Relief',this)"><div class="cb"></div>Hunger Relief</div>
+              <div class="co" onclick="pc(1,'Faith &amp; Community',this)"><div class="cb"></div>Faith &amp; Community</div>
+            </div>
+          </div>
+          <div class="fg" style="margin-top:1.3rem;">
+            <label class="fl">Cause Category 2 *</label>
+            <div class="cg" id="cg2">
+              <div class="co" onclick="pc(2,'Animal Welfare',this)"><div class="cb"></div>Animal Welfare</div>
+              <div class="co sel" onclick="pc(2,'Child Protection',this)"><div class="cb"></div>Child Protection</div>
+              <div class="co" onclick="pc(2,'Veterans',this)"><div class="cb"></div>Veterans</div>
+              <div class="co" onclick="pc(2,'Environment',this)"><div class="cb"></div>Environment</div>
+              <div class="co" onclick="pc(2,'Medical Research',this)"><div class="cb"></div>Medical Research</div>
+              <div class="co" onclick="pc(2,'Education',this)"><div class="cb"></div>Education</div>
+              <div class="co" onclick="pc(2,'Hunger Relief',this)"><div class="cb"></div>Hunger Relief</div>
+              <div class="co" onclick="pc(2,'Faith &amp; Community',this)"><div class="cb"></div>Faith &amp; Community</div>
+            </div>
+            <p id="cd">Selected: <strong>Animal Welfare</strong> &amp; <strong>Child Protection</strong></p>
+          </div>
+          <div class="cause-info">Document 3 is pre-built with the <strong>Dreams Business Resources</strong> residual income engine as Layer 1 — the engine that makes generational legacy possible.</div>
+          <div class="snav"><button class="btn-back" onclick="go(3)">← Back</button><button class="btn-next" onclick="go(5)">Continue: Review →</button></div>
+        </div>
+        <!-- STEP 5 — REVIEW -->
+        <div class="panel" id="s5">
+          <div class="ph">
+            <span class="ptag">Step 5 of 5 — Review &amp; Generate</span>
+            <h3 class="ptitle">Everything look right?</h3>
+            <p class="phint">Review your information below. Claude will receive all of this and generate your complete 3-document legacy package.</p>
+          </div>
+          <div class="rv-box" id="rv"></div>
+          <p style="font-family:'Cormorant Garamond',serif;font-size:15px;color:var(--dim);font-style:italic;text-align:center;margin-bottom:1.3rem;">Clicking Generate will open Claude with your complete family data pre-loaded — Claude will write and deliver your 3 documents in the chat.</p>
+          <div class="snav">
+            <button class="btn-back" onclick="go(4)">← Back</button>
+            <button class="btn-next" onclick="generate()" style="font-size:11px;padding:.75rem 1.7rem;background:var(--gold);color:var(--navy-deep);">✦ Generate My Legacy Documents</button>
+          </div>
+        </div>
+        <!-- GENERATING -->
+        <div class="panel" id="sgen">
+          <div class="gen-st">
+            <div class="spinner"></div>
+            <div class="gm" id="gm">Composing your Founder's Letter…</div>
+            <div class="gsub" id="gsub">PREPARING YOUR DOCUMENTS</div>
+            <div class="gbar"><div class="gfill" id="gfill"></div></div>
+          </div>
+        </div>
+        <!-- DONE -->
+        <div class="panel" id="sdone">
+          <div class="done-st">
+            <div class="d-orn">· · ·</div>
+            <h3 class="d-title" id="done-title">Your Legacy Is Ready</h3>
+            <p class="d-sub">Claude has received your complete family data. Your 3-document legacy package is being written in the chat window — follow the instructions there to save your documents.</p>
+            <div class="d-docs">
+              <div class="d-doc"><strong>Document 01</strong>Founder's Letter — personalized to your family</div>
+              <div class="d-doc"><strong>Document 02</strong>Charitable Addendum — top 15 charities per cause</div>
+              <div class="d-doc"><strong>Document 03</strong>Master Blueprint — DBR engine + full architecture</div>
+            </div>
+            <button class="btn-dl" id="final-dl">Open Claude to View My Documents</button>
+            <span class="restart" onclick="restart()">Build a document for a different family</span>
+          </div>
+        </div>
+      </div><!-- /.bw -->
+    </div><!-- /.si -->
+  </section>
+
   <!-- CTA -->
   <section class="cta-section fade-up" id="start">
     <h2 class="cta-title">Your Family Deserves<br><span>This Document.</span></h2>
     <p class="cta-sub">It takes 8 minutes. It costs nothing. And it will mean everything to the people you love most.</p>
-    <a class="btn-primary" href="https://claude.ai/project/01JTHKDMQBG2QNKDMJ6RQHQ8H" target="_blank" rel="noopener" style="font-size:13px; padding:16px 36px;">▶ Build My Legacy Now — It's Free</a>
+    <a class="btn-primary" href="#builder" style="font-size:13px; padding:16px 36px;">▶ Start Building My Legacy Above</a>
     <div class="cta-note">Powered by Claude AI · No account required · Your documents are private and yours forever</div>
   </section>
 
@@ -799,6 +1391,171 @@ body {
   );
   els.forEach((el) => obs.observe(el));
 })();
+
+// ── WIZARD ENGINE ──
+var cause1 = 'Animal Welfare';
+var cause2 = 'Child Protection';
+var claudeUrl = '';
+
+function go(n) {
+  // Validate step 1 required fields
+  if (n === 2) {
+    var h = document.getElementById('v-h').value.trim();
+    var l = document.getElementById('v-l').value.trim();
+    if (!h || !l) {
+      alert('Please enter at least the Founder\'s first name and family last name.');
+      return;
+    }
+    // Update labels with real names
+    var w = document.getElementById('v-w').value.trim() || 'Co-Founder';
+    document.getElementById('lbl-h').textContent = 'Founder\'s Story (' + h + ')';
+    document.getElementById('lbl-w').textContent = 'Co-Founder\'s Story (' + (w || 'Wife') + ')';
+  }
+  // Hide all panels
+  document.querySelectorAll('.panel').forEach(function(p) { p.classList.remove('act'); });
+  // Show target panel
+  var target = n <= 5 ? 's' + n : (n === 6 ? 'sgen' : 'sdone');
+  var el = document.getElementById(target);
+  if (el) el.classList.add('act');
+  // Update progress bar
+  document.querySelectorAll('.pstep').forEach(function(s) {
+    var sn = parseInt(s.getAttribute('data-s'));
+    s.classList.remove('act', 'done');
+    if (sn < n) s.classList.add('done');
+    if (sn === n) s.classList.add('act');
+  });
+  // Populate review on step 5
+  if (n === 5) buildReview();
+  // Scroll to builder
+  document.getElementById('builder').scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+
+function pc(group, name, el) {
+  // Deselect all in group
+  document.querySelectorAll('#cg' + group + ' .co').forEach(function(c) { c.classList.remove('sel'); });
+  el.classList.add('sel');
+  if (group === 1) cause1 = name;
+  else cause2 = name;
+  document.getElementById('cd').innerHTML = 'Selected: <strong>' + cause1 + '</strong> &amp; <strong>' + cause2 + '</strong>';
+}
+
+function buildReview() {
+  var h = document.getElementById('v-h').value.trim() || '—';
+  var w = document.getElementById('v-w').value.trim() || '—';
+  var l = document.getElementById('v-l').value.trim() || '—';
+  var c = document.getElementById('v-c').value.trim() || 'None listed';
+  var g = document.getElementById('v-g').value.trim() || 'None listed';
+  var p = document.getElementById('v-p').value.trim() || 'None listed';
+  var sh = document.getElementById('v-sh').value.trim() || '—';
+  var sw = document.getElementById('v-sw').value.trim() || '—';
+  var b = document.getElementById('v-b').value.trim() || '—';
+  var gm = document.getElementById('v-gm').value.trim() || '—';
+  var rows = [
+    ['Foundation Name', l + ' Family Foundation'],
+    ['Founders', h + ' &amp; ' + w + ' ' + l],
+    ['Children', c],
+    ['Grandchildren', g],
+    ['Pets', p],
+    [h + '\'s Story', sh.length > 120 ? sh.substring(0,120) + '…' : sh],
+    [w + '\'s Story', sw.length > 120 ? sw.substring(0,120) + '…' : sw],
+    ['Beliefs', b.length > 120 ? b.substring(0,120) + '…' : b],
+    ['Message to Grandchildren', gm.length > 100 ? gm.substring(0,100) + '…' : gm],
+    ['Cause 1', cause1],
+    ['Cause 2', cause2]
+  ];
+  var html = rows.map(function(r) {
+    return '<div class="rv-row"><div class="rv-k">' + r[0] + '</div><div class="rv-v">' + r[1] + '</div></div>';
+  }).join('');
+  document.getElementById('rv').innerHTML = html;
+}
+
+function generate() {
+  var h = document.getElementById('v-h').value.trim();
+  var w = document.getElementById('v-w').value.trim();
+  var l = document.getElementById('v-l').value.trim();
+  var c = document.getElementById('v-c').value.trim();
+  var g = document.getElementById('v-g').value.trim();
+  var p = document.getElementById('v-p').value.trim();
+  var sh = document.getElementById('v-sh').value.trim();
+  var sw = document.getElementById('v-sw').value.trim();
+  var b = document.getElementById('v-b').value.trim();
+  var gm = document.getElementById('v-gm').value.trim();
+
+  // Show generating panel
+  document.querySelectorAll('.panel').forEach(function(p) { p.classList.remove('act'); });
+  document.getElementById('sgen').classList.add('act');
+
+  // Animate progress bar
+  var fill = document.getElementById('gfill');
+  var msgs = [
+    ['Composing your Founder\'s Letter\u2026', 'DOCUMENT 1 OF 3'],
+    ['Building your Charitable Addendum\u2026', 'DOCUMENT 2 OF 3'],
+    ['Assembling your Master Blueprint\u2026', 'DOCUMENT 3 OF 3'],
+    ['Preparing your prompt for Claude\u2026', 'ALMOST READY']
+  ];
+  var i = 0;
+  var interval = setInterval(function() {
+    if (i < msgs.length) {
+      document.getElementById('gm').textContent = msgs[i][0];
+      document.getElementById('gsub').textContent = msgs[i][1];
+      fill.style.width = ((i + 1) * 25) + '%';
+      i++;
+    } else {
+      clearInterval(interval);
+      // Build the Claude prompt
+      var prompt = buildPrompt(h, w, l, c, g, p, sh, sw, b, gm);
+      claudeUrl = 'https://claude.ai/new?q=' + encodeURIComponent(prompt);
+      // Show done panel
+      document.querySelectorAll('.panel').forEach(function(p) { p.classList.remove('act'); });
+      document.getElementById('sdone').classList.add('act');
+      document.getElementById('final-dl').onclick = function() {
+        window.open(claudeUrl, '_blank');
+      };
+    }
+  }, 900);
+}
+
+function buildPrompt(h, w, l, c, g, p, sh, sw, b, gm) {
+  return 'You are a professional legacy document writer for Dreams Business Resources. Please create three complete, polished family legacy documents for the ' + l + ' family.\n\n' +
+    '=== FAMILY INFORMATION ===\n' +
+    'Foundation Name: ' + l + ' Family Foundation\n' +
+    'Husband / Founder: ' + (h || 'Not provided') + ' ' + l + '\n' +
+    'Wife / Co-Founder: ' + (w || 'Not provided') + ' ' + l + '\n' +
+    'Children: ' + (c || 'None listed') + '\n' +
+    'Grandchildren: ' + (g || 'None listed') + '\n' +
+    'Pets: ' + (p || 'None listed') + '\n\n' +
+    '=== FOUNDER\'S STORY (' + h.toUpperCase() + ') ===\n' + (sh || 'Not provided') + '\n\n' +
+    '=== CO-FOUNDER\'S STORY (' + w.toUpperCase() + ') ===\n' + (sw || 'Not provided') + '\n\n' +
+    '=== SPIRITUAL & PHILOSOPHICAL FOUNDATION ===\n' + (b || 'Not provided') + '\n\n' +
+    '=== MESSAGE TO GRANDCHILDREN ===\n' + (gm || 'Not provided') + '\n\n' +
+    '=== CHARITABLE CAUSES ===\n' +
+    'Cause 1: ' + cause1 + '\n' +
+    'Cause 2: ' + cause2 + '\n\n' +
+    '=== DOCUMENTS TO CREATE ===\n\n' +
+    'DOCUMENT 1 — THE FOUNDER\'S LETTER\n' +
+    'A deeply personal letter from ' + h + ' and ' + w + ' ' + l + ' to their family — written in their voice, incorporating their stories, beliefs, and love for their children (' + (c || 'their children') + ') and grandchildren (' + (g || 'their grandchildren') + '). Include their pets (' + (p || 'their animals') + ') as part of the family story. This should feel warm, real, and permanent — something a family would frame and read for generations.\n\n' +
+    'DOCUMENT 2 — CHARITABLE PARTNERS ADDENDUM\n' +
+    'A formal one-page declaration of the ' + l + ' Family Foundation\'s charitable mission. List the top 15 independently rated charities for BOTH cause categories (' + cause1 + ' AND ' + cause2 + ') with their website URLs. Format this as a professional document the family can use to guide their giving for generations.\n\n' +
+    'DOCUMENT 3 — THE MASTER BLUEPRINT\n' +
+    'A comprehensive family legacy and wealth architecture document. Include:\n' +
+    '- The ' + l + ' Family Mission Statement\n' +
+    '- Layer 1: The Dreams Business Resources Residual Income Engine (explain how DBR creates the permanent income that funds the legacy — recruiting, B2B sales, residual commissions, the AI agent team)\n' +
+    '- Layer 2: The ' + l + ' Family Foundation charitable giving structure\n' +
+    '- Layer 3: Generational wealth transfer principles\n' +
+    '- A message to future generations of the ' + l + ' family\n\n' +
+    'Please write all three documents in full, formatted clearly with headers. Make them print-ready and emotionally resonant. This family\'s legacy starts today.';
+}
+
+function restart() {
+  document.querySelectorAll('.fi, .fta').forEach(function(f) { f.value = ''; });
+  cause1 = 'Animal Welfare';
+  cause2 = 'Child Protection';
+  document.querySelectorAll('.co').forEach(function(c) { c.classList.remove('sel'); });
+  document.querySelectorAll('#cg1 .co')[0].classList.add('sel');
+  document.querySelectorAll('#cg2 .co')[1].classList.add('sel');
+  document.getElementById('cd').innerHTML = 'Selected: <strong>Animal Welfare</strong> &amp; <strong>Child Protection</strong>';
+  go(1);
+}
 </script>
 </body>
 </html>
