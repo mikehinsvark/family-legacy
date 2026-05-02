@@ -1,843 +1,719 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Family Legacy Program · Dreams Business Resources</title>
-<meta name="description" content="Build your family's permanent legacy in minutes. Three documents. One mission. AI-powered by Claude. Completely free." />
-<meta property="og:title" content="Family Legacy Program · Dreams Business Resources" />
-<meta property="og:description" content="Build your family's permanent legacy in minutes. AI-powered by Claude." />
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&family=Crimson+Pro:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
-<style>
-/* ═══════════════════════════════════════════════════
-   FAMILY LEGACY PRO — DARK MARITIME LUXURY
-   Matches: dreamsaiagents.pro / dreamsfaststart.com
-   Palette: Navy bg, Teal accent, Gold secondary, Cream text
-═══════════════════════════════════════════════════ */
-:root {
-  --navy-deep:   #050d14;
-  --navy-mid:    #071520;
-  --navy-card:   #0c1e2e;
-  --navy-light:  #112436;
-  --navy-border: #1a3347;
-  --teal:        #2dd4bf;
-  --teal-dim:    #1a9e8f;
-  --teal-glow:   rgba(45,212,191,0.15);
-  --gold:        #c9a84c;
-  --gold-light:  #e8c97a;
-  --cream:       #f0ead8;
-  --text:        #c8dce8;
-  --dim:         #4a6880;
-  --muted:       #2a4255;
-  --green:       #22c55e;
-}
-* { margin:0; padding:0; box-sizing:border-box; }
-html { scroll-behavior: smooth; }
-body {
-  background: var(--navy-deep);
-  font-family: 'Crimson Pro', Georgia, serif;
-  color: var(--text);
-  min-height: 100vh;
-  overflow-x: hidden;
-  background-image:
-    linear-gradient(rgba(45,212,191,0.025) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(45,212,191,0.025) 1px, transparent 1px);
-  background-size: 32px 32px;
-}
-#site-wrapper {
-  max-width: 1080px;
-  margin: 0 auto;
-  background: var(--navy-mid);
-  min-height: 100vh;
-  box-shadow: 0 0 80px rgba(0,0,0,0.6), 0 0 0 1px rgba(45,212,191,0.08);
-  position: relative;
-}
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
+  <title>Family Legacy Program · Dreams Business Resources</title>
+  <meta name="description" content="Build your family's permanent legacy in minutes. Three documents. One mission. AI-powered by Claude. Completely free." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&family=Crimson+Pro:ital,wght@0,400;0,600;1,400&family=DM+Mono:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet" />
+  <style>
+    /* ═══════════════════════════════════════════════════════════
+       FAMILY LEGACY PRO — Dark Maritime Luxury Design System
+       Deep navy + teal bioluminescence + gold script
+       Matches renewalsforlifestyle.com / dreamsfaststart.com
+       ═══════════════════════════════════════════════════════════ */
 
-/* ── HEADER ── */
-.header-top {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 18px 32px 14px;
-  border-bottom: 1px solid var(--navy-border);
-  background: linear-gradient(180deg, rgba(5,13,20,0.9), transparent);
-}
-.logo-block { display:flex; flex-direction:column; gap:2px; }
-.logo-title {
-  font-family: 'Cinzel', serif;
-  font-size: 22px;
-  font-weight: 700;
-  color: var(--cream);
-  letter-spacing: 2px;
-  text-transform: uppercase;
-}
-.logo-title span { color: var(--teal); }
-.logo-sub {
-  font-family: 'DM Mono', monospace;
-  font-size: 9px;
-  letter-spacing: 3px;
-  color: var(--dim);
-  text-transform: uppercase;
-}
-.header-tagline {
-  font-family: 'Cormorant Garamond', serif;
-  font-style: italic;
-  font-size: 14px;
-  color: var(--gold);
-  text-align: right;
-  max-width: 220px;
-  line-height: 1.4;
-}
-.nav-row {
-  display: flex;
-  align-items: center;
-  gap: 0;
-  padding: 0 24px;
-  border-bottom: 1px solid var(--navy-border);
-  background: var(--navy-deep);
-  overflow-x: auto;
-  scrollbar-width: none;
-}
-.nav-row::-webkit-scrollbar { display:none; }
-.nav-link {
-  font-family: 'DM Mono', monospace;
-  font-size: 10px;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  color: var(--dim);
-  text-decoration: none;
-  padding: 14px 16px;
-  border-bottom: 2px solid transparent;
-  white-space: nowrap;
-  transition: color 0.2s, border-color 0.2s;
-}
-.nav-link:hover { color: var(--teal); }
-.nav-link.active {
-  color: var(--teal);
-  border-bottom-color: var(--teal);
-}
-.nav-spacer { flex: 1; }
-.nav-cta {
-  font-family: 'DM Mono', monospace;
-  font-size: 10px;
-  letter-spacing: 1.5px;
-  text-transform: uppercase;
-  color: var(--navy-deep);
-  background: var(--teal);
-  padding: 8px 16px;
-  border-radius: 4px;
-  text-decoration: none;
-  white-space: nowrap;
-  transition: background 0.2s;
-}
-.nav-cta:hover { background: var(--gold); }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-/* ── HERO ── */
-.hero {
-  position: relative;
-  min-height: 480px;
-  display: flex;
-  align-items: center;
-  overflow: hidden;
-}
-.hero-bg {
-  position: absolute;
-  inset: 0;
-  background-image: url('images/legacy_banner.webp');
-  background-size: cover;
-  background-position: center 30%;
-  filter: brightness(0.35) saturate(0.7);
-}
-.hero-overlay {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(135deg, rgba(5,13,20,0.85) 0%, rgba(7,21,32,0.5) 60%, transparent 100%);
-}
-.hero-content {
-  position: relative;
-  z-index: 2;
-  padding: 60px 48px;
-  max-width: 680px;
-}
-.hero-eyebrow {
-  font-family: 'DM Mono', monospace;
-  font-size: 10px;
-  letter-spacing: 3px;
-  color: var(--teal);
-  text-transform: uppercase;
-  margin-bottom: 16px;
-}
-.hero-title {
-  font-family: 'Cinzel', serif;
-  font-size: clamp(32px, 5vw, 56px);
-  font-weight: 700;
-  color: var(--cream);
-  line-height: 1.15;
-  margin-bottom: 20px;
-}
-.hero-title span { color: var(--gold); }
-.hero-sub {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 20px;
-  color: var(--text);
-  line-height: 1.65;
-  margin-bottom: 32px;
-  max-width: 540px;
-}
-.hero-badges {
-  display: flex;
-  gap: 12px;
-  flex-wrap: wrap;
-  margin-bottom: 32px;
-}
-.badge {
-  font-family: 'DM Mono', monospace;
-  font-size: 9px;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  padding: 6px 12px;
-  border-radius: 3px;
-  border: 1px solid;
-}
-.badge-teal { color: var(--teal); border-color: rgba(45,212,191,0.3); background: rgba(45,212,191,0.08); }
-.badge-gold { color: var(--gold); border-color: rgba(201,168,76,0.3); background: rgba(201,168,76,0.08); }
-.badge-green { color: var(--green); border-color: rgba(34,197,94,0.3); background: rgba(34,197,94,0.08); }
-.btn-primary {
-  display: inline-block;
-  font-family: 'DM Mono', monospace;
-  font-size: 11px;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  color: var(--navy-deep);
-  background: var(--teal);
-  padding: 14px 28px;
-  border-radius: 4px;
-  text-decoration: none;
-  border: none;
-  cursor: pointer;
-  transition: background 0.2s, transform 0.15s;
-}
-.btn-primary:hover { background: var(--gold); transform: translateY(-1px); }
-.btn-secondary {
-  display: inline-block;
-  font-family: 'DM Mono', monospace;
-  font-size: 11px;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  color: var(--teal);
-  background: transparent;
-  padding: 14px 28px;
-  border-radius: 4px;
-  text-decoration: none;
-  border: 1px solid rgba(45,212,191,0.4);
-  cursor: pointer;
-  transition: background 0.2s, color 0.2s;
-  margin-left: 12px;
-}
-.btn-secondary:hover { background: var(--teal-glow); }
+    :root {
+      --navy-deep:   #071520;
+      --navy:        #0d2137;
+      --navy-mid:    #163250;
+      --navy-light:  #1e4068;
+      --teal:        #2dd4bf;
+      --teal-dim:    #1a9e8e;
+      --gold:        #c9a84c;
+      --gold-light:  #e8c97a;
+      --cream:       #e8dcc8;
+      --cream-dim:   #b8a990;
+    }
 
-/* ── SECTION STYLES ── */
-.section {
-  padding: 64px 48px;
-  border-bottom: 1px solid var(--navy-border);
-}
-.section-alt { background: var(--navy-card); }
-.section-eyebrow {
-  font-family: 'DM Mono', monospace;
-  font-size: 10px;
-  letter-spacing: 3px;
-  color: var(--teal);
-  text-transform: uppercase;
-  margin-bottom: 12px;
-}
-.section-title {
-  font-family: 'Cinzel', serif;
-  font-size: clamp(24px, 3.5vw, 38px);
-  font-weight: 600;
-  color: var(--cream);
-  line-height: 1.2;
-  margin-bottom: 16px;
-}
-.section-title span { color: var(--gold); }
-.section-body {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 19px;
-  color: var(--text);
-  line-height: 1.7;
-  max-width: 680px;
-  margin-bottom: 40px;
-}
+    html { scroll-behavior: smooth; }
 
-/* ── STAT ROW ── */
-.stat-row {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 1px;
-  background: var(--navy-border);
-  border: 1px solid var(--navy-border);
-  border-radius: 8px;
-  overflow: hidden;
-  margin: 40px 0;
-}
-.stat-cell {
-  background: var(--navy-card);
-  padding: 28px 20px;
-  text-align: center;
-}
-.stat-num {
-  font-family: 'Cinzel', serif;
-  font-size: 36px;
-  font-weight: 700;
-  color: var(--teal);
-  line-height: 1;
-  margin-bottom: 8px;
-}
-.stat-label {
-  font-family: 'DM Mono', monospace;
-  font-size: 9px;
-  letter-spacing: 2px;
-  color: var(--dim);
-  text-transform: uppercase;
-}
+    body {
+      font-family: 'Crimson Pro', Georgia, serif;
+      font-size: 18px;
+      line-height: 1.75;
+      background-color: #040c14;
+      background-image:
+        linear-gradient(rgba(45,212,191,0.025) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(45,212,191,0.025) 1px, transparent 1px);
+      background-size: 40px 40px;
+      color: var(--cream);
+      overflow-x: hidden;
+    }
 
-/* ── DOCUMENT CARDS ── */
-.doc-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
-  margin-top: 32px;
-}
-.doc-card {
-  background: var(--navy-card);
-  border: 1px solid var(--navy-border);
-  border-radius: 8px;
-  padding: 28px 24px;
-  position: relative;
-  overflow: hidden;
-  transition: border-color 0.2s, transform 0.2s;
-}
-.doc-card:hover { border-color: var(--teal-dim); transform: translateY(-2px); }
-.doc-card::before {
-  content: '';
-  position: absolute;
-  top: 0; left: 0; right: 0;
-  height: 3px;
-  background: linear-gradient(90deg, var(--teal), var(--gold));
-}
-.doc-icon {
-  font-size: 32px;
-  margin-bottom: 16px;
-}
-.doc-title {
-  font-family: 'Cinzel', serif;
-  font-size: 15px;
-  font-weight: 600;
-  color: var(--cream);
-  margin-bottom: 10px;
-  line-height: 1.3;
-}
-.doc-desc {
-  font-family: 'Crimson Pro', serif;
-  font-size: 15px;
-  color: var(--text);
-  line-height: 1.6;
-}
+    #site-wrapper {
+      max-width: 1080px;
+      margin: 0 auto;
+      background-color: var(--navy-deep);
+      box-shadow: 0 0 80px rgba(0,0,0,0.8);
+      position: relative;
+    }
 
-/* ── HOW IT WORKS ── */
-.steps-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 24px;
-  margin-top: 32px;
-}
-.step-card {
-  background: var(--navy-card);
-  border: 1px solid var(--navy-border);
-  border-radius: 8px;
-  padding: 28px 24px;
-  display: flex;
-  gap: 20px;
-  align-items: flex-start;
-  transition: border-color 0.2s;
-}
-.step-card:hover { border-color: rgba(45,212,191,0.3); }
-.step-num {
-  font-family: 'Cinzel', serif;
-  font-size: 28px;
-  font-weight: 700;
-  color: var(--teal);
-  opacity: 0.5;
-  line-height: 1;
-  flex-shrink: 0;
-  min-width: 40px;
-}
-.step-content {}
-.step-title {
-  font-family: 'Cinzel', serif;
-  font-size: 15px;
-  font-weight: 600;
-  color: var(--cream);
-  margin-bottom: 8px;
-}
-.step-body {
-  font-family: 'Crimson Pro', serif;
-  font-size: 15px;
-  color: var(--text);
-  line-height: 1.6;
-}
+    h1, h2, h3, h4, h5, h6 {
+      font-family: 'Cinzel', 'Times New Roman', serif;
+      letter-spacing: 0.02em;
+      line-height: 1.2;
+    }
 
-/* ── IMAGE GALLERY ── */
-.gallery-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 12px;
-  margin-top: 32px;
-}
-.gallery-img {
-  width: 100%;
-  aspect-ratio: 4/3;
-  object-fit: cover;
-  border-radius: 6px;
-  border: 1px solid var(--navy-border);
-  filter: brightness(0.8) saturate(0.8);
-  transition: filter 0.3s, transform 0.3s;
-}
-.gallery-img:hover { filter: brightness(1) saturate(1); transform: scale(1.02); }
+    ::-webkit-scrollbar { width: 5px; }
+    ::-webkit-scrollbar-track { background: var(--navy); }
+    ::-webkit-scrollbar-thumb { background: var(--teal-dim); border-radius: 3px; }
 
-/* ── TESTIMONIALS ── */
-.testimonial-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
-  margin-top: 32px;
-}
-.testimonial-card {
-  background: var(--navy-card);
-  border: 1px solid var(--navy-border);
-  border-radius: 8px;
-  padding: 28px 24px;
-  position: relative;
-}
-.testimonial-card::before {
-  content: '"';
-  position: absolute;
-  top: 12px; left: 20px;
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 64px;
-  color: var(--teal);
-  opacity: 0.2;
-  line-height: 1;
-}
-.testimonial-quote {
-  font-family: 'Cormorant Garamond', serif;
-  font-style: italic;
-  font-size: 17px;
-  color: var(--cream);
-  line-height: 1.65;
-  margin-bottom: 20px;
-  padding-top: 8px;
-}
-.testimonial-name {
-  font-family: 'DM Mono', monospace;
-  font-size: 10px;
-  letter-spacing: 2px;
-  color: var(--teal);
-  text-transform: uppercase;
-  margin-bottom: 4px;
-}
-.testimonial-loc {
-  font-family: 'DM Mono', monospace;
-  font-size: 9px;
-  letter-spacing: 1px;
-  color: var(--dim);
-}
+    /* ── Buttons ── */
+    .btn-teal {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      background: var(--teal); color: var(--navy-deep);
+      font-family: 'Cinzel', serif; font-size: 0.85rem; font-weight: 700;
+      letter-spacing: 0.08em; text-transform: uppercase;
+      padding: 0.85rem 2rem; border-radius: 3px; border: none;
+      cursor: pointer; transition: all 0.25s ease; text-decoration: none;
+    }
+    .btn-teal:hover { background: var(--gold); box-shadow: 0 0 24px rgba(45,212,191,0.4); transform: translateY(-1px); }
 
-/* ── CAUSES SECTION ── */
-.causes-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 12px;
-  margin-top: 28px;
-}
-.cause-pill {
-  background: var(--navy-card);
-  border: 1px solid var(--navy-border);
-  border-radius: 6px;
-  padding: 14px 16px;
-  text-align: center;
-  font-family: 'DM Mono', monospace;
-  font-size: 10px;
-  letter-spacing: 1.5px;
-  color: var(--text);
-  text-transform: uppercase;
-  transition: border-color 0.2s, color 0.2s;
-}
-.cause-pill:hover { border-color: var(--gold); color: var(--gold); }
+    .btn-ghost {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      background: transparent; color: var(--teal);
+      font-family: 'Cinzel', serif; font-size: 0.8rem; font-weight: 600;
+      letter-spacing: 0.08em; text-transform: uppercase;
+      padding: 0.8rem 1.75rem; border-radius: 3px; border: 1px solid var(--teal);
+      cursor: pointer; transition: all 0.25s ease; text-decoration: none;
+    }
+    .btn-ghost:hover { background: rgba(45,212,191,0.1); box-shadow: 0 0 16px rgba(45,212,191,0.2); }
 
-/* ── CTA SECTION ── */
-.cta-section {
-  padding: 72px 48px;
-  text-align: center;
-  background: linear-gradient(135deg, var(--navy-deep) 0%, #0a1a2c 100%);
-  border-bottom: 1px solid var(--navy-border);
-  position: relative;
-  overflow: hidden;
-}
-.cta-section::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(ellipse 60% 50% at 50% 50%, rgba(45,212,191,0.06), transparent);
-}
-.cta-section > * { position: relative; z-index: 1; }
-.cta-title {
-  font-family: 'Cinzel', serif;
-  font-size: clamp(28px, 4vw, 44px);
-  font-weight: 700;
-  color: var(--cream);
-  margin-bottom: 16px;
-  line-height: 1.2;
-}
-.cta-title span { color: var(--gold); }
-.cta-sub {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 20px;
-  color: var(--text);
-  line-height: 1.6;
-  max-width: 580px;
-  margin: 0 auto 36px;
-}
-.cta-note {
-  font-family: 'DM Mono', monospace;
-  font-size: 10px;
-  letter-spacing: 2px;
-  color: var(--dim);
-  text-transform: uppercase;
-  margin-top: 20px;
-}
+    /* ── Section label ── */
+    .section-label {
+      font-family: 'Cinzel', serif; font-size: 0.7rem;
+      letter-spacing: 0.2em; text-transform: uppercase;
+      color: var(--teal); margin-bottom: 0.75rem;
+    }
 
-/* ── FOOTER ── */
-.footer {
-  padding: 32px 48px;
-  border-top: 1px solid var(--navy-border);
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 16px;
-}
-.footer-logo {
-  font-family: 'Cinzel', serif;
-  font-size: 14px;
-  font-weight: 600;
-  color: var(--cream);
-  letter-spacing: 2px;
-}
-.footer-logo span { color: var(--teal); }
-.footer-links {
-  display: flex;
-  gap: 20px;
-  flex-wrap: wrap;
-}
-.footer-links a {
-  font-family: 'DM Mono', monospace;
-  font-size: 9px;
-  letter-spacing: 2px;
-  color: var(--dim);
-  text-decoration: none;
-  text-transform: uppercase;
-  transition: color 0.2s;
-}
-.footer-links a:hover { color: var(--teal); }
-.footer-copy {
-  font-family: 'DM Mono', monospace;
-  font-size: 9px;
-  letter-spacing: 1px;
-  color: var(--muted);
-  text-transform: uppercase;
-  width: 100%;
-  text-align: center;
-  margin-top: 8px;
-}
+    /* ── Teal left-border card ── */
+    .legacy-card {
+      background: rgba(22,50,80,0.5); border: 1px solid rgba(45,212,191,0.15);
+      border-left: 3px solid var(--teal); border-radius: 4px; padding: 2rem;
+      transition: all 0.3s ease;
+    }
+    .legacy-card:hover {
+      background: rgba(22,50,80,0.8); border-color: rgba(45,212,191,0.4);
+      transform: translateY(-3px); box-shadow: 0 12px 40px rgba(0,0,0,0.4);
+    }
 
-/* ── QUOTE BANNER ── */
-.quote-banner {
-  background: linear-gradient(135deg, rgba(201,168,76,0.08), rgba(45,212,191,0.05));
-  border-top: 1px solid rgba(201,168,76,0.2);
-  border-bottom: 1px solid rgba(201,168,76,0.2);
-  padding: 32px 48px;
-  text-align: center;
-}
-.quote-banner blockquote {
-  font-family: 'Cormorant Garamond', serif;
-  font-style: italic;
-  font-size: 22px;
-  color: var(--gold-light);
-  line-height: 1.6;
-  max-width: 700px;
-  margin: 0 auto;
-}
-.quote-banner cite {
-  display: block;
-  font-family: 'DM Mono', monospace;
-  font-size: 10px;
-  letter-spacing: 2px;
-  color: var(--dim);
-  text-transform: uppercase;
-  font-style: normal;
-  margin-top: 12px;
-}
+    /* ── Divider ── */
+    .teal-divider { width: 60px; height: 2px; background: linear-gradient(90deg, var(--teal), transparent); margin: 1.5rem 0; }
 
-/* ── FADE-UP ANIMATION ── */
-.fade-up {
-  opacity: 0;
-  transform: translateY(24px);
-  transition: opacity 0.6s ease, transform 0.6s ease;
-}
-.fade-up.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
+    /* ── Scroll fade-in ── */
+    .fade-up { opacity: 0; transform: translateY(28px); transition: opacity 0.7s ease, transform 0.7s ease; }
+    .fade-up.visible { opacity: 1; transform: translateY(0); }
 
-/* ── RESPONSIVE ── */
-@media (max-width: 768px) {
-  .header-top { padding: 14px 20px; }
-  .header-tagline { display: none; }
-  .hero-content { padding: 40px 24px; }
-  .section { padding: 48px 24px; }
-  .stat-row { grid-template-columns: repeat(2, 1fr); }
-  .doc-grid { grid-template-columns: 1fr; }
-  .steps-grid { grid-template-columns: 1fr; }
-  .gallery-grid { grid-template-columns: repeat(2, 1fr); }
-  .testimonial-grid { grid-template-columns: 1fr; }
-  .causes-grid { grid-template-columns: repeat(2, 1fr); }
-  .cta-section { padding: 48px 24px; }
-  .footer { padding: 24px 20px; flex-direction: column; align-items: flex-start; }
-  .quote-banner { padding: 24px 20px; }
-  .nav-row { padding: 0 12px; }
-  .btn-secondary { margin-left: 0; margin-top: 12px; }
-}
-</style>
+    /* ── Stat cell ── */
+    .stat-cell { text-align: center; padding: 2.5rem 1.5rem; border: 1px solid rgba(201,168,76,0.2); border-radius: 4px; background: rgba(5,14,24,0.6); }
+    .stat-num { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 3.5rem; color: var(--gold); line-height: 1; margin-bottom: 0.5rem; }
+    .stat-label { font-family: 'Cinzel', serif; font-size: 0.65rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--cream-dim); }
+
+    /* ── Wizard modal ── */
+    .wizard-overlay {
+      position: fixed; inset: 0; z-index: 300;
+      display: flex; align-items: center; justify-content: center; padding: 1rem;
+    }
+    .wizard-backdrop {
+      position: absolute; inset: 0; background: rgba(4,12,20,0.9); backdrop-filter: blur(6px);
+    }
+    .wizard-box {
+      position: relative; width: 100%; max-width: 640px; max-height: 90vh; overflow-y: auto;
+      background: #0c1e2e; border: 1px solid rgba(45,212,191,0.3); border-radius: 8px;
+      padding: 2.5rem; box-shadow: 0 24px 80px rgba(0,0,0,0.8);
+    }
+
+    /* ── Wizard form inputs ── */
+    .wiz-input, .wiz-textarea {
+      width: 100%; background: rgba(22,50,80,0.6); border: 1px solid rgba(45,212,191,0.25);
+      border-radius: 4px; color: #e8dcc8; font-family: 'Crimson Pro', serif; font-size: 1rem;
+      padding: 0.75rem 1rem; outline: none; transition: border-color 0.2s;
+    }
+    .wiz-input:focus, .wiz-textarea:focus { border-color: rgba(45,212,191,0.6); }
+    .wiz-textarea { min-height: 120px; resize: vertical; }
+    .wiz-label {
+      font-family: 'Cinzel', serif; font-size: 0.65rem; letter-spacing: 0.15em;
+      color: #2dd4bf; text-transform: uppercase; margin-bottom: 0.4rem; display: block;
+    }
+
+    /* ── Cause button ── */
+    .cause-btn {
+      background: rgba(22,50,80,0.4); border: 1px solid rgba(45,212,191,0.2); border-radius: 4px;
+      padding: 0.85rem 1rem; cursor: pointer; font-family: 'Cinzel', serif; font-size: 0.65rem;
+      letter-spacing: 0.08em; color: #b8a990; text-align: left; transition: all 0.2s ease; width: 100%;
+    }
+    .cause-btn.selected { background: rgba(45,212,191,0.2); border: 2px solid #2dd4bf; color: #2dd4bf; }
+
+    /* ── Responsive ── */
+    .hidden-mobile { display: flex; }
+    .show-mobile   { display: none; }
+    .icon-label    { display: inline; }
+
+    @media (max-width: 768px) {
+      .hidden-mobile { display: none !important; }
+      .show-mobile   { display: block !important; }
+      .icon-label    { display: none; }
+      #site-wrapper  { max-width: 100%; }
+    }
+    @media (max-width: 520px) {
+      .stat-num { font-size: 2rem !important; }
+    }
+
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); opacity: 0.8; }
+      50% { transform: scale(1.1); opacity: 1; box-shadow: 0 0 30px rgba(45,212,191,0.3); }
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
 </head>
 <body>
-<div id="site-wrapper">
 
-  <!-- HEADER -->
-  <header class="header-top">
-    <div class="logo-block">
-      <div class="logo-title">Family <span>Legacy</span> Program</div>
-      <div class="logo-sub">Dreams Business Resources · Your Permanent Legacy</div>
-    </div>
-    <div class="header-tagline">"The greatest gift you can give your family is a clear vision of who you are."</div>
-  </header>
+<div style="min-height:100vh;padding:0">
+  <div id="site-wrapper">
 
-  <!-- NAV -->
-  <nav class="nav-row">
-    <a class="nav-link" href="https://renewalsforlifestyle.com" target="_blank" rel="noopener">The Dream</a>
-    <a class="nav-link" href="https://dreamsfaststart.com" target="_blank" rel="noopener">DBR Fast Start</a>
-    <a class="nav-link" href="https://renewalsforlifestyle.com" target="_blank" rel="noopener">Live to 100</a>
-    <a class="nav-link" href="https://dreamsaiagents.pro" target="_blank" rel="noopener">AI Agents</a>
-    <a class="nav-link active" href="#hero">Your Legacy</a>
-    <div class="nav-spacer"></div>
-    <a class="nav-cta" href="https://claude.ai/project/01JTHKDMQBG2QNKDMJ6RQHQ8H" target="_blank" rel="noopener">Build My Legacy →</a>
-  </nav>
+    <!-- ── TWO-ROW HEADER ── -->
+    <header id="main-header" style="position:sticky;top:0;z-index:100;background:rgba(7,21,32,0.97);backdrop-filter:blur(12px)">
 
-  <!-- HERO -->
-  <section class="hero" id="hero">
-    <div class="hero-bg"></div>
-    <div class="hero-overlay"></div>
-    <div class="hero-content">
-      <div class="hero-eyebrow">// Your Family's Permanent Legacy</div>
-      <h1 class="hero-title">Leave Something<br><span>That Lasts Forever.</span></h1>
-      <p class="hero-sub">Three powerful documents. One guided conversation with AI. A legacy your family will treasure for generations — completed in minutes, kept forever.</p>
-      <div class="hero-badges">
-        <span class="badge badge-teal">✓ Completely Free</span>
-        <span class="badge badge-gold">✓ AI-Powered by Claude</span>
-        <span class="badge badge-green">✓ Done in Minutes</span>
+      <!-- Row 1: Logo + tagline -->
+      <div style="display:flex;align-items:center;justify-content:space-between;padding:1.1rem 2rem 0.9rem">
+        <div>
+          <a href="https://renewalsforlifestyle.com" target="_blank" rel="noopener noreferrer"
+            style="font-family:'Cinzel',serif;font-size:1.45rem;color:#2dd4bf;text-decoration:none;letter-spacing:0.04em;display:block;line-height:1.15">
+            Family Legacy
+          </a>
+          <div style="font-family:'Cinzel',serif;font-size:0.6rem;color:#b8a990;letter-spacing:0.22em;margin-top:0.15rem">
+            DREAMS BUSINESS RESOURCES · LEGACY PROGRAM
+          </div>
+        </div>
+        <div class="hidden-mobile" style="text-align:right">
+          <div style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.05rem;color:#c9a84c;line-height:1.4">
+            Real wealth is <em style="color:#2dd4bf">mission, family &amp; time.</em>
+          </div>
+          <div style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.05rem;color:#c9a84c">
+            Design the legacy first.
+          </div>
+        </div>
+        <button onclick="document.getElementById('mobile-menu').style.display='flex'" class="show-mobile"
+          style="background:none;border:none;color:#2dd4bf;font-size:1.5rem;cursor:pointer;padding:0.25rem">☰</button>
       </div>
-      <a class="btn-primary" href="https://claude.ai/project/01JTHKDMQBG2QNKDMJ6RQHQ8H" target="_blank" rel="noopener">▶ Start Building My Legacy</a>
-      <a class="btn-secondary" href="#how-it-works">See How It Works</a>
-    </div>
-  </section>
 
-  <!-- STATS -->
-  <div class="stat-row">
-    <div class="stat-cell">
-      <div class="stat-num">3</div>
-      <div class="stat-label">Documents Created</div>
-    </div>
-    <div class="stat-cell">
-      <div class="stat-num">8</div>
-      <div class="stat-label">Minutes to Complete</div>
-    </div>
-    <div class="stat-cell">
-      <div class="stat-num">∞</div>
-      <div class="stat-label">Generations of Impact</div>
-    </div>
-    <div class="stat-cell">
-      <div class="stat-num">$0</div>
-      <div class="stat-label">Cost — Always Free</div>
-    </div>
-  </div>
+      <!-- Row 2: Nav tabs -->
+      <div style="border-top:1px solid rgba(45,212,191,0.12);border-bottom:1px solid rgba(45,212,191,0.12)" class="hidden-mobile">
+        <div style="display:flex;align-items:center;padding:0 2rem;gap:0">
+          <span style="color:#2dd4bf;font-size:0.75rem;margin-right:1.5rem">✦</span>
+          <a href="https://renewalsforlifestyle.com" target="_blank" rel="noopener noreferrer"
+            style="font-family:'Cinzel',serif;font-size:0.72rem;letter-spacing:0.1em;color:#b8a990;text-decoration:none;padding:0.75rem 1.25rem;border-bottom:2px solid transparent;margin-bottom:-1px;transition:color 0.2s;white-space:nowrap"
+            onmouseover="this.style.color='#e8dcc8'" onmouseout="this.style.color='#b8a990'">THE DREAM</a>
+          <a href="https://renewalsforlifestyle.com" target="_blank" rel="noopener noreferrer"
+            style="font-family:'Cinzel',serif;font-size:0.72rem;letter-spacing:0.1em;color:#b8a990;text-decoration:none;padding:0.75rem 1.25rem;border-bottom:2px solid transparent;margin-bottom:-1px;transition:color 0.2s;white-space:nowrap"
+            onmouseover="this.style.color='#e8dcc8'" onmouseout="this.style.color='#b8a990'">CITY GUIDES</a>
+          <a href="https://renewalsforlifestyle.com" target="_blank" rel="noopener noreferrer"
+            style="font-family:'Cinzel',serif;font-size:0.72rem;letter-spacing:0.1em;color:#b8a990;text-decoration:none;padding:0.75rem 1.25rem;border-bottom:2px solid transparent;margin-bottom:-1px;transition:color 0.2s;white-space:nowrap"
+            onmouseover="this.style.color='#e8dcc8'" onmouseout="this.style.color='#b8a990'">LIVE TO 100</a>
+          <a href="#hero"
+            style="font-family:'Cinzel',serif;font-size:0.72rem;letter-spacing:0.1em;color:#2dd4bf;text-decoration:none;padding:0.75rem 1.25rem;border-bottom:2px solid #2dd4bf;margin-bottom:-1px;white-space:nowrap">YOUR LEGACY</a>
 
-  <!-- DOCUMENTS SECTION -->
-  <section class="section fade-up" id="documents">
-    <div class="section-eyebrow">// What You'll Create</div>
-    <h2 class="section-title">Three Documents.<br><span>One Permanent Legacy.</span></h2>
-    <p class="section-body">Claude guides you through a thoughtful conversation about your values, your family, and your vision. In minutes, it produces three polished, permanent documents — yours to keep forever.</p>
-    <div class="doc-grid">
-      <div class="doc-card fade-up">
-        <div class="doc-icon">📜</div>
-        <div class="doc-title">The Founder's Letter</div>
-        <div class="doc-desc">A personal letter from you to your family — your values, your story, your wishes for their future. Written in your voice, preserved forever.</div>
-      </div>
-      <div class="doc-card fade-up">
-        <div class="doc-icon">🤝</div>
-        <div class="doc-title">Charitable Partners Addendum</div>
-        <div class="doc-desc">A formal declaration of the causes and organizations you care about most — a roadmap for your family's charitable giving and community impact.</div>
-      </div>
-      <div class="doc-card fade-up">
-        <div class="doc-icon">🏛️</div>
-        <div class="doc-title">The Master Blueprint</div>
-        <div class="doc-desc">A comprehensive family legacy document — your vision for generational wealth, values, traditions, and the impact you want to leave on the world.</div>
-      </div>
-    </div>
-  </section>
-
-  <!-- GALLERY -->
-  <section class="section section-alt fade-up">
-    <div class="section-eyebrow">// The Life You're Building</div>
-    <h2 class="section-title">Your Legacy Is <span>More Than Money.</span></h2>
-    <p class="section-body">A true family legacy encompasses the experiences, values, and relationships that define who you are — and who your family will become.</p>
-    <div class="gallery-grid">
-      <img class="gallery-img" src="images/family_beach_sunset.jpg" alt="Family at sunset" loading="lazy">
-      <img class="gallery-img" src="images/multigenerational.jpg" alt="Multigenerational family" loading="lazy">
-      <img class="gallery-img" src="images/infinity_pool.jpg" alt="Luxury lifestyle" loading="lazy">
-      <img class="gallery-img" src="images/family_silhouette.jpg" alt="Family silhouette" loading="lazy">
-      <img class="gallery-img" src="images/luxury_mansion.jpg" alt="Legacy home" loading="lazy">
-      <img class="gallery-img" src="images/pool_sunset.jpg" alt="Sunset reflection" loading="lazy">
-    </div>
-  </section>
-
-  <!-- HOW IT WORKS -->
-  <section class="section fade-up" id="how-it-works">
-    <div class="section-eyebrow">// The Process</div>
-    <h2 class="section-title">Four Steps to <span>Your Legacy.</span></h2>
-    <p class="section-body">Claude walks you through every step. No writing experience needed. No templates to fill out. Just an honest conversation — and three documents that will outlast you.</p>
-    <div class="steps-grid">
-      <div class="step-card fade-up">
-        <div class="step-num">01</div>
-        <div class="step-content">
-          <div class="step-title">Answer the Questions</div>
-          <div class="step-body">Claude guides you through 12 thoughtful prompts about your values, your family, your calling, and your vision for generational impact.</div>
+          <div style="margin-left:auto;display:flex;align-items:center;gap:0.6rem">
+            <!-- SEE SAMPLE — styled like nav link with turquoise underline -->
+            <button id="see-sample-btn" onclick="toggleSample()"
+              style="font-family:'Cinzel',serif;font-size:0.72rem;letter-spacing:0.1em;padding:0.75rem 1.25rem;cursor:pointer;transition:color 0.2s,border-color 0.2s;background:none;color:#b8a990;border:none;border-bottom:2px solid transparent;margin-bottom:-1px;white-space:nowrap"
+              onmouseover="this.style.color='#e8dcc8'" onmouseout="if(!sampleOpen)this.style.color='#b8a990'">
+              SEE SAMPLE
+            </button>
+            <a href="https://claude.ai/project/01JTHKDMQBG2QNKDMJ6RQHQ8H" target="_blank" rel="noopener noreferrer"
+              class="btn-teal" style="padding:0.45rem 1.1rem;font-size:0.65rem">
+              Build My Legacy →
+            </a>
+          </div>
         </div>
       </div>
-      <div class="step-card fade-up">
-        <div class="step-num">02</div>
-        <div class="step-content">
-          <div class="step-title">AI Composes Your Documents</div>
-          <div class="step-body">Claude writes your Founder's Letter, Charitable Partners Addendum, and Master Blueprint in your voice — polished and permanent.</div>
+    </header>
+
+    <!-- ── MOBILE MENU ── -->
+    <div id="mobile-menu" style="display:none;position:fixed;inset:0;z-index:200">
+      <div onclick="document.getElementById('mobile-menu').style.display='none'" style="position:absolute;inset:0;background:rgba(4,12,20,0.85);backdrop-filter:blur(4px)"></div>
+      <div style="position:absolute;top:0;right:0;bottom:0;width:280px;background:#0d2137;border-left:1px solid rgba(45,212,191,0.2);padding:5rem 2rem 2rem;display:flex;flex-direction:column;gap:0.25rem">
+        <button onclick="document.getElementById('mobile-menu').style.display='none'" style="position:absolute;top:1.25rem;right:1.25rem;background:none;border:none;color:#2dd4bf;font-size:1.5rem;cursor:pointer">✕</button>
+        <a href="https://renewalsforlifestyle.com" target="_blank" rel="noopener noreferrer" onclick="document.getElementById('mobile-menu').style.display='none'"
+          style="font-family:'Cinzel',serif;font-size:0.8rem;letter-spacing:0.12em;color:#b8a990;text-decoration:none;padding:0.9rem 0;border-bottom:1px solid rgba(45,212,191,0.1)">THE DREAM</a>
+        <a href="https://renewalsforlifestyle.com" target="_blank" rel="noopener noreferrer" onclick="document.getElementById('mobile-menu').style.display='none'"
+          style="font-family:'Cinzel',serif;font-size:0.8rem;letter-spacing:0.12em;color:#b8a990;text-decoration:none;padding:0.9rem 0;border-bottom:1px solid rgba(45,212,191,0.1)">CITY GUIDES</a>
+        <a href="https://renewalsforlifestyle.com" target="_blank" rel="noopener noreferrer" onclick="document.getElementById('mobile-menu').style.display='none'"
+          style="font-family:'Cinzel',serif;font-size:0.8rem;letter-spacing:0.12em;color:#b8a990;text-decoration:none;padding:0.9rem 0;border-bottom:1px solid rgba(45,212,191,0.1)">LIVE TO 100</a>
+        <a href="#hero" onclick="document.getElementById('mobile-menu').style.display='none'"
+          style="font-family:'Cinzel',serif;font-size:0.8rem;letter-spacing:0.12em;color:#2dd4bf;text-decoration:none;padding:0.9rem 0;border-bottom:1px solid rgba(45,212,191,0.1)">YOUR LEGACY</a>
+        <a href="https://claude.ai/project/01JTHKDMQBG2QNKDMJ6RQHQ8H" target="_blank" rel="noopener noreferrer" class="btn-teal" style="margin-top:1.5rem;justify-content:center;font-size:0.75rem">
+          Build My Legacy →
+        </a>
+      </div>
+    </div>
+
+    <!-- ── SAMPLE PANEL (drops below sticky nav) ── -->
+    <section id="sample-panel" style="display:none;background:#050e18;border-bottom:2px solid rgba(45,212,191,0.35);padding:3rem 2rem 3.5rem;position:relative;z-index:10;animation:fadeIn 0.3s ease">
+
+      <!-- Close bar -->
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:2rem">
+        <div>
+          <div style="font-family:'Cinzel',serif;font-size:0.58rem;letter-spacing:0.18em;color:#2dd4bf;margin-bottom:0.35rem">// SEE IT FIRST</div>
+          <h2 style="font-family:'Cinzel',serif;font-size:clamp(1.4rem,3vw,2.2rem);color:#e8dcc8;margin:0">
+            The Bobby Family <em style="font-family:'Cormorant Garamond',serif;font-style:italic;color:#c9a84c">Sample.</em>
+          </h2>
+        </div>
+        <button onclick="toggleSample()" style="background:none;border:none;color:#2dd4bf;font-size:1.4rem;cursor:pointer;opacity:0.7;line-height:1" title="Close sample">✕</button>
+      </div>
+
+      <!-- Stats bar inside sample panel -->
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:1rem;margin-bottom:2.5rem">
+        <div class="stat-cell"><div class="stat-num">70%</div><div class="stat-label">Lose Wealth by Gen 2</div></div>
+        <div class="stat-cell"><div class="stat-num">90%</div><div class="stat-label">Lose It by Gen 3</div></div>
+        <div class="stat-cell"><div class="stat-num">5%</div><div class="stat-label">Fail from Bad Investments</div></div>
+        <div class="stat-cell"><div class="stat-num">95%</div><div class="stat-label">Our Structure Addresses</div></div>
+      </div>
+      <p style="text-align:center;font-family:'Cinzel',serif;font-size:0.58rem;letter-spacing:0.15em;color:#b8a990;margin-bottom:2.5rem">
+        WILLIAMS GROUP STUDY · 3,200 WEALTHY FAMILIES
+      </p>
+
+      <!-- Sample image -->
+      <div style="max-width:960px;margin:0 auto 2.5rem;border-radius:6px;overflow:hidden;border:1px solid rgba(45,212,191,0.15);box-shadow:0 8px 40px rgba(0,0,0,0.5)">
+        <img src="https://raw.githubusercontent.com/mikehinsvark/family-legacy/main/images/bobby_family_sample_preview.png"
+          alt="Bobby Family Legacy Sample — Document Preview"
+          style="width:100%;display:block;object-fit:cover"
+          onerror="this.style.display='none'" />
+      </div>
+
+      <!-- Two-column layout -->
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:2.5rem;align-items:start;max-width:960px;margin:0 auto">
+
+        <!-- LEFT: Document preview panel -->
+        <div style="background:rgba(13,33,55,0.85);border:1px solid rgba(45,212,191,0.25);border-radius:6px;overflow:hidden">
+          <div style="background:rgba(22,50,80,0.95);padding:0.85rem 1.25rem;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid rgba(45,212,191,0.15)">
+            <div style="font-family:'Cinzel',serif;font-size:0.58rem;letter-spacing:0.12em;color:#2dd4bf">BOBBY FAMILY FOUNDATION · FOUNDER'S LETTER</div>
+            <div style="font-family:'Cinzel',serif;font-size:0.55rem;letter-spacing:0.08em;color:#b8a990;background:rgba(45,212,191,0.08);border:1px solid rgba(45,212,191,0.2);border-radius:3px;padding:0.2rem 0.5rem;white-space:nowrap">Doc 1 of 3</div>
+          </div>
+          <div style="padding:1.75rem">
+            <h3 style="font-family:'Cinzel',serif;font-size:0.85rem;color:#e8dcc8;margin-bottom:0.4rem;letter-spacing:0.08em">THE BOBBY FAMILY FOUNDATION</h3>
+            <div style="font-family:'Cinzel',serif;font-size:0.58rem;letter-spacing:0.15em;color:#b8a990;margin-bottom:1.5rem">FOUNDER'S LETTER · A PERMANENT DECLARATION</div>
+            <p style="font-family:'Cormorant Garamond',serif;font-style:italic;color:#c9a84c;line-height:1.9;font-size:1.05rem;margin-bottom:1rem">
+              To our children Louis and Samantha, and our grandchildren Joey and Suzy —
+            </p>
+            <p style="font-family:'Crimson Pro',serif;font-style:italic;color:#b8a990;line-height:1.9;font-size:0.98rem;margin-bottom:1rem">
+              If you are reading this, then something we built together while we were here on this earth has outlived us — and that was always the point.
+            </p>
+            <p style="font-family:'Crimson Pro',serif;font-style:italic;color:#b8a990;line-height:1.9;font-size:0.98rem">
+              We did not build wealth for its own sake. We built it because we understood something early on that most people discover too late: when you stop working, your impact stops too — <em style="color:#2dd4bf">unless you architect it differently…</em>
+            </p>
+          </div>
+          <div style="padding:1.1rem 1.75rem;border-top:1px solid rgba(45,212,191,0.1);text-align:center">
+            <a href="https://raw.githubusercontent.com/mikehinsvark/family-legacy/main/Bobby_Family_Legacy_Sample.docx"
+              download="Bobby_Family_Legacy_Sample.docx"
+              class="btn-ghost"
+              style="display:inline-flex;align-items:center;gap:0.5rem;font-size:0.68rem;letter-spacing:0.1em;text-decoration:none">
+              ↓ DOWNLOAD FULL SAMPLE (.DOCX)
+            </a>
+          </div>
+        </div>
+
+        <!-- RIGHT: Description + CTA -->
+        <div style="display:flex;flex-direction:column;gap:1.5rem">
+          <p style="font-family:'Cormorant Garamond',serif;font-size:1.2rem;color:#e8dcc8;line-height:1.8">
+            This is exactly what your completed document looks like — personalized to your family's names, stories, and calling. Download the full 3-document sample, then build your own.
+          </p>
+          <div style="background:rgba(13,33,55,0.85);border:1px solid rgba(45,212,191,0.2);border-radius:6px;padding:1.5rem">
+            <div style="font-family:'Cinzel',serif;font-size:0.58rem;letter-spacing:0.15em;color:#b8a990;margin-bottom:0.6rem">COMPLETE PACKAGE</div>
+            <div style="font-family:'Cinzel',serif;font-size:1.05rem;color:#e8dcc8;margin-bottom:1.25rem;line-height:1.4">Bobby Family Legacy · 3-Document Series</div>
+            <a href="https://raw.githubusercontent.com/mikehinsvark/family-legacy/main/Bobby_Family_Legacy_Sample.docx"
+              download="Bobby_Family_Legacy_Sample.docx"
+              style="display:block;width:100%;text-align:center;background:#2dd4bf;color:#071520;font-family:'Cinzel',serif;font-size:0.7rem;letter-spacing:0.12em;padding:0.9rem 1.5rem;border-radius:3px;text-decoration:none;font-weight:600;margin-bottom:0.85rem">
+              ↓ DOWNLOAD FREE SAMPLE
+            </a>
+            <a href="https://claude.ai/project/01JTHKDMQBG2QNKDMJ6RQHQ8H" target="_blank" rel="noopener noreferrer"
+              style="display:block;width:100%;text-align:center;background:transparent;color:#2dd4bf;border:1px solid #2dd4bf;font-family:'Cinzel',serif;font-size:0.7rem;letter-spacing:0.12em;padding:0.9rem 1.5rem;border-radius:3px;text-decoration:none;font-weight:600">
+              BUILD MY FAMILY'S LEGACY →
+            </a>
+          </div>
         </div>
       </div>
-      <div class="step-card fade-up">
-        <div class="step-num">03</div>
-        <div class="step-content">
-          <div class="step-title">Review & Personalize</div>
-          <div class="step-body">Read every word. Edit anything. Add your family's names, stories, and specific wishes. This is your document, not a template.</div>
+    </section>
+
+    <!-- ── HERO ── -->
+    <section id="hero" style="position:relative;min-height:90vh;display:flex;flex-direction:column">
+      <canvas id="particle-canvas" style="position:absolute;inset:0;pointer-events:none;z-index:1;width:100%;height:100%"></canvas>
+
+      <div style="position:relative;z-index:2">
+        <img src="https://raw.githubusercontent.com/mikehinsvark/family-legacy/main/images/legacy_banner.webp"
+          alt="What Will Your Family Remember You Built?"
+          style="width:100%;display:block;max-height:500px;object-fit:cover" />
+        <div style="position:absolute;bottom:0;left:0;right:0;height:100px;background:linear-gradient(to bottom,transparent,#071520)"></div>
+      </div>
+
+      <div style="position:relative;z-index:2;background:rgba(13,33,55,0.95);border-top:1px solid rgba(45,212,191,0.15);border-bottom:1px solid rgba(45,212,191,0.15)">
+        <div style="display:grid;grid-template-columns:repeat(4,1fr)">
+          <div style="display:flex;align-items:center;justify-content:center;gap:0.5rem;padding:0.9rem 0.25rem;border-right:1px solid rgba(45,212,191,0.12)">
+            <span style="color:#2dd4bf;font-size:1rem">◎</span>
+            <span class="icon-label" style="font-family:'Cinzel',serif;font-size:0.55rem;letter-spacing:0.1em;text-transform:uppercase;color:#b8a990">Create Freedom</span>
+          </div>
+          <div style="display:flex;align-items:center;justify-content:center;gap:0.5rem;padding:0.9rem 0.25rem;border-right:1px solid rgba(45,212,191,0.12)">
+            <span style="color:#2dd4bf;font-size:1rem">◈</span>
+            <span class="icon-label" style="font-family:'Cinzel',serif;font-size:0.55rem;letter-spacing:0.1em;text-transform:uppercase;color:#b8a990">Build Generations</span>
+          </div>
+          <div style="display:flex;align-items:center;justify-content:center;gap:0.5rem;padding:0.9rem 0.25rem;border-right:1px solid rgba(45,212,191,0.12)">
+            <span style="color:#2dd4bf;font-size:1rem">◉</span>
+            <span class="icon-label" style="font-family:'Cinzel',serif;font-size:0.55rem;letter-spacing:0.1em;text-transform:uppercase;color:#b8a990">Leave a Legacy</span>
+          </div>
+          <div style="display:flex;align-items:center;justify-content:center;gap:0.5rem;padding:0.9rem 0.25rem">
+            <span style="color:#2dd4bf;font-size:1rem">∞</span>
+            <span class="icon-label" style="font-family:'Cinzel',serif;font-size:0.55rem;letter-spacing:0.1em;text-transform:uppercase;color:#b8a990">Live Purposefully</span>
+          </div>
         </div>
       </div>
-      <div class="step-card fade-up">
-        <div class="step-num">04</div>
-        <div class="step-content">
-          <div class="step-title">Download & Keep Forever</div>
-          <div class="step-body">Save as PDF. Print it. Store it. Share it with your family. Your documents are yours — completely free, forever.</div>
+
+      <div style="position:relative;z-index:2;flex:1;display:flex;align-items:center;justify-content:center;padding:4rem 1.5rem 3rem">
+        <div style="text-align:center;max-width:620px">
+          <div class="section-label" style="margin-bottom:1.25rem">Your Legacy · Dreams Business Resources</div>
+          <blockquote style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(1.3rem,3vw,1.9rem);color:#e8dcc8;line-height:1.5;margin-bottom:1rem;border-left:none;padding:0">
+            "When you stop working, your impact stops too —
+            <span style="color:#2dd4bf">unless you architect it differently.</span>"
+          </blockquote>
+          <div style="font-family:'Cinzel',serif;font-size:0.6rem;letter-spacing:0.18em;color:#b8a990;margin-bottom:2.5rem">
+            THE FOUNDING PRINCIPLE · EVERY FAMILY LEGACY WE BUILD
+          </div>
+          <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap">
+            <a href="https://claude.ai/project/01JTHKDMQBG2QNKDMJ6RQHQ8H" target="_blank" rel="noopener noreferrer" class="btn-teal">
+              Begin Building My Legacy →
+            </a>
+            <button onclick="toggleSample()" class="btn-ghost" style="cursor:pointer">See a Sample First</button>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
 
-  <!-- CAUSES -->
-  <section class="section section-alt fade-up">
-    <div class="section-eyebrow">// Your Charitable Vision</div>
-    <h2 class="section-title">Define the Causes <span>You Champion.</span></h2>
-    <p class="section-body">Your Charitable Partners Addendum captures the causes closest to your heart — creating a roadmap for your family's giving that will guide them long after you're gone.</p>
-    <div class="causes-grid">
-      <div class="cause-pill">Children & Youth</div>
-      <div class="cause-pill">Education</div>
-      <div class="cause-pill">Medical Research</div>
-      <div class="cause-pill">Animal Welfare</div>
-      <div class="cause-pill">Environment</div>
-      <div class="cause-pill">Hunger & Poverty</div>
-      <div class="cause-pill">Veterans & Military</div>
-      <div class="cause-pill">Arts & Culture</div>
-    </div>
-  </section>
-
-  <!-- TESTIMONIALS -->
-  <section class="section fade-up">
-    <div class="section-eyebrow">// What Families Are Saying</div>
-    <h2 class="section-title">Real Legacies. <span>Real Impact.</span></h2>
-    <div class="testimonial-grid">
-      <div class="testimonial-card fade-up">
-        <div class="testimonial-quote">I've been meaning to do this for 15 years. I finished in 8 minutes and cried reading it back to my wife. This is the most important document I've ever created.</div>
-        <div class="testimonial-name">Family Foundation Founder</div>
-        <div class="testimonial-loc">San Diego, CA</div>
+      <div style="position:relative;z-index:2;text-align:center;padding-bottom:2rem">
+        <a href="#about" style="font-family:'Cinzel',serif;font-size:0.6rem;letter-spacing:0.2em;color:#2dd4bf;text-decoration:none">DISCOVER ↓</a>
       </div>
-      <div class="testimonial-card fade-up">
-        <div class="testimonial-quote">As a DBR agent I share this with every prospect. It changes the conversation from 'selling insurance' to 'building a legacy.' Three families have already completed theirs.</div>
-        <div class="testimonial-name">Business Owner & DBR Agent</div>
-        <div class="testimonial-loc">Phoenix, AZ</div>
+    </section>
+
+    <!-- ── STATS BAR ── -->
+    <section style="padding:3.5rem 2rem;background:#050e18;border-top:1px solid rgba(45,212,191,0.12);border-bottom:1px solid rgba(45,212,191,0.12)">
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:1.25rem;margin-bottom:1.5rem">
+        <div class="stat-cell fade-up"><div class="stat-num">70%</div><div class="stat-label">Lose Wealth by Gen 2</div></div>
+        <div class="stat-cell fade-up"><div class="stat-num">90%</div><div class="stat-label">Lose It by Gen 3</div></div>
+        <div class="stat-cell fade-up"><div class="stat-num">5%</div><div class="stat-label">Fail from Bad Investments</div></div>
+        <div class="stat-cell fade-up"><div class="stat-num">95%</div><div class="stat-label">Our Structure Addresses</div></div>
       </div>
-      <div class="testimonial-card fade-up">
-        <div class="testimonial-quote">I didn't think I had anything worth writing down. The questions made me realize I had everything. My kids are going to treasure this document.</div>
-        <div class="testimonial-name">New DBR Agent</div>
-        <div class="testimonial-loc">Nashville, TN</div>
+      <p class="fade-up" style="text-align:center;font-family:'Cinzel',serif;font-size:0.58rem;letter-spacing:0.15em;color:#b8a990">
+        WILLIAMS GROUP STUDY · 3,200 WEALTHY FAMILIES
+      </p>
+    </section>
+
+    <!-- ── ABOUT ── -->
+    <section id="about" style="padding:5rem 2rem;background:linear-gradient(180deg,#071520 0%,#0d2137 100%)">
+      <div style="max-width:720px;margin:0 auto">
+        <p class="fade-up" style="font-family:'Crimson Pro',serif;font-size:1.15rem;line-height:1.9;color:#b8a990;margin-bottom:1.5rem">
+          Most people spend their lives <strong style="color:#e8dcc8">meaning to do something that matters</strong> — and never quite getting to it. Not because they don't care. Because they're too busy building.
+        </p>
+        <p class="fade-up" style="font-family:'Crimson Pro',serif;font-size:1.15rem;line-height:1.9;color:#b8a990;margin-bottom:1.5rem">
+          But here is what we have learned: <em style="color:#2dd4bf">the decision to build a legacy changes you before the money arrives.</em> The moment you write it down — your values, your calling, the names of the people and creatures you are fighting for — something shifts.
+        </p>
+        <p class="fade-up" style="font-family:'Crimson Pro',serif;font-size:1.15rem;line-height:1.9;color:#b8a990">
+          The document does not wait for you to be wealthy. <strong style="color:#e8dcc8">It makes you one already.</strong>
+        </p>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- QUOTE BANNER -->
-  <div class="quote-banner fade-up">
-    <blockquote>
-      "The best time to build your legacy was twenty years ago. The second best time is right now."
-      <cite>— Dreams Business Resources · Family Legacy Program</cite>
-    </blockquote>
-  </div>
+    <!-- ── THREE DOCUMENTS ── -->
+    <section style="padding:5rem 2rem;background:#0d2137">
+      <div style="text-align:center;margin-bottom:3.5rem">
+        <div class="section-label fade-up">What You Receive</div>
+        <h2 class="fade-up" style="font-family:'Cinzel',serif;font-size:clamp(1.8rem,4vw,2.8rem);color:#e8dcc8;margin-bottom:0.25rem">Three Documents.</h2>
+        <h2 class="fade-up" style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(1.8rem,4vw,2.8rem);color:#c9a84c;margin-bottom:1rem">One Permanent Legacy.</h2>
+        <div class="teal-divider fade-up" style="margin:1.25rem auto"></div>
+        <p class="fade-up" style="font-family:'Cinzel',serif;font-size:0.65rem;letter-spacing:0.15em;color:#b8a990">BUILT IN MINUTES. LASTS CENTURIES.</p>
+      </div>
 
-  <!-- CTA -->
-  <section class="cta-section fade-up" id="start">
-    <h2 class="cta-title">Your Family Deserves<br><span>This Document.</span></h2>
-    <p class="cta-sub">It takes 8 minutes. It costs nothing. And it will mean everything to the people you love most.</p>
-    <a class="btn-primary" href="https://claude.ai/project/01JTHKDMQBG2QNKDMJ6RQHQ8H" target="_blank" rel="noopener" style="font-size:13px; padding:16px 36px;">▶ Build My Legacy Now — It's Free</a>
-    <div class="cta-note">Powered by Claude AI · No account required · Your documents are private and yours forever</div>
-  </section>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.75rem">
 
-  <!-- FOOTER -->
-  <footer class="footer">
-    <div class="footer-logo">Family <span>Legacy</span> Program</div>
-    <div class="footer-links">
-      <a href="https://renewalsforlifestyle.com" target="_blank" rel="noopener">The Dream</a>
-      <a href="https://dreamsfaststart.com" target="_blank" rel="noopener">DBR Fast Start</a>
-      <a href="https://dreamsaiagents.pro" target="_blank" rel="noopener">AI Agents</a>
-      <a href="https://renewalsforlifestyle.com" target="_blank" rel="noopener">Live to 100</a>
-    </div>
-    <div class="footer-copy">© 2026 Dreams Business Resources · Family Legacy Program · familylegacy.pro</div>
-  </footer>
+        <div class="legacy-card fade-up">
+          <div style="height:170px;overflow:hidden;border-radius:3px;margin-bottom:1.25rem">
+            <img src="https://raw.githubusercontent.com/mikehinsvark/family-legacy/main/images/family_silhouette.jpg" alt="Founder's Letter" style="width:100%;height:100%;object-fit:cover" />
+          </div>
+          <div class="section-label">Document 1 of 3</div>
+          <h3 style="font-family:'Cinzel',serif;font-size:1rem;color:#e8dcc8;margin-bottom:0.75rem">The Founder's Letter</h3>
+          <p style="color:#b8a990;font-size:0.95rem;margin-bottom:1rem;line-height:1.7">A permanent declaration of why your family built wealth — written to your children and grandchildren in your own voice.</p>
+          <ul style="list-style:none;padding:0;margin:0">
+            <li style="display:flex;align-items:flex-start;gap:0.5rem;color:#b8a990;font-size:0.9rem;margin-bottom:0.35rem"><span style="color:#2dd4bf;margin-top:0.15rem;flex-shrink:0">·</span> Your personal origin story</li>
+            <li style="display:flex;align-items:flex-start;gap:0.5rem;color:#b8a990;font-size:0.9rem;margin-bottom:0.35rem"><span style="color:#2dd4bf;margin-top:0.15rem;flex-shrink:0">·</span> Your calling to the causes you protect</li>
+            <li style="display:flex;align-items:flex-start;gap:0.5rem;color:#b8a990;font-size:0.9rem;margin-bottom:0.35rem"><span style="color:#2dd4bf;margin-top:0.15rem;flex-shrink:0">·</span> What you expect of future stewards</li>
+            <li style="display:flex;align-items:flex-start;gap:0.5rem;color:#b8a990;font-size:0.9rem;margin-bottom:0.35rem"><span style="color:#2dd4bf;margin-top:0.15rem;flex-shrink:0">·</span> Your spiritual &amp; philosophical foundation</li>
+            <li style="display:flex;align-items:flex-start;gap:0.5rem;color:#b8a990;font-size:0.9rem;margin-bottom:0.35rem"><span style="color:#2dd4bf;margin-top:0.15rem;flex-shrink:0">·</span> Signed by both founders</li>
+          </ul>
+        </div>
 
+        <div class="legacy-card fade-up">
+          <div style="height:170px;overflow:hidden;border-radius:3px;margin-bottom:1.25rem">
+            <img src="https://raw.githubusercontent.com/mikehinsvark/family-legacy/main/images/family_beach_sunset.jpg" alt="Charitable Partners Addendum" style="width:100%;height:100%;object-fit:cover" />
+          </div>
+          <div class="section-label">Document 2 of 3</div>
+          <h3 style="font-family:'Cinzel',serif;font-size:1rem;color:#e8dcc8;margin-bottom:0.75rem">Charitable Partners Addendum</h3>
+          <p style="color:#b8a990;font-size:0.95rem;margin-bottom:1rem;line-height:1.7">Your vetted roadmap for generational giving — the top 15 organizations in each of your two chosen cause categories.</p>
+          <ul style="list-style:none;padding:0;margin:0">
+            <li style="display:flex;align-items:flex-start;gap:0.5rem;color:#b8a990;font-size:0.9rem;margin-bottom:0.35rem"><span style="color:#2dd4bf;margin-top:0.15rem;flex-shrink:0">·</span> 8 cause categories to choose from</li>
+            <li style="display:flex;align-items:flex-start;gap:0.5rem;color:#b8a990;font-size:0.9rem;margin-bottom:0.35rem"><span style="color:#2dd4bf;margin-top:0.15rem;flex-shrink:0">·</span> 15 top-rated charities per category</li>
+            <li style="display:flex;align-items:flex-start;gap:0.5rem;color:#b8a990;font-size:0.9rem;margin-bottom:0.35rem"><span style="color:#2dd4bf;margin-top:0.15rem;flex-shrink:0">·</span> Charity Navigator &amp; CharityWatch ratings</li>
+            <li style="display:flex;align-items:flex-start;gap:0.5rem;color:#b8a990;font-size:0.9rem;margin-bottom:0.35rem"><span style="color:#2dd4bf;margin-top:0.15rem;flex-shrink:0">·</span> Mission summaries for future stewards</li>
+            <li style="display:flex;align-items:flex-start;gap:0.5rem;color:#b8a990;font-size:0.9rem;margin-bottom:0.35rem"><span style="color:#2dd4bf;margin-top:0.15rem;flex-shrink:0">·</span> Updatable by board vote annually</li>
+          </ul>
+        </div>
+
+        <div class="legacy-card fade-up">
+          <div style="height:170px;overflow:hidden;border-radius:3px;margin-bottom:1.25rem">
+            <img src="https://raw.githubusercontent.com/mikehinsvark/family-legacy/main/images/luxury_villa.jpg" alt="Master Blueprint" style="width:100%;height:100%;object-fit:cover" />
+          </div>
+          <div class="section-label">Document 3 of 3</div>
+          <h3 style="font-family:'Cinzel',serif;font-size:1rem;color:#e8dcc8;margin-bottom:0.75rem">Master Blueprint</h3>
+          <p style="color:#b8a990;font-size:0.95rem;margin-bottom:1rem;line-height:1.7">The complete 5-layer wealth-to-philanthropy architecture ensuring your fortune outlasts your lifetime.</p>
+          <ul style="list-style:none;padding:0;margin:0">
+            <li style="display:flex;align-items:flex-start;gap:0.5rem;color:#b8a990;font-size:0.9rem;margin-bottom:0.35rem"><span style="color:#2dd4bf;margin-top:0.15rem;flex-shrink:0">·</span> Layer 1: DBR residual income engine</li>
+            <li style="display:flex;align-items:flex-start;gap:0.5rem;color:#b8a990;font-size:0.9rem;margin-bottom:0.35rem"><span style="color:#2dd4bf;margin-top:0.15rem;flex-shrink:0">·</span> Layers 2–5: Full wealth architecture</li>
+            <li style="display:flex;align-items:flex-start;gap:0.5rem;color:#b8a990;font-size:0.9rem;margin-bottom:0.35rem"><span style="color:#2dd4bf;margin-top:0.15rem;flex-shrink:0">·</span> 3-phase build sequence</li>
+            <li style="display:flex;align-items:flex-start;gap:0.5rem;color:#b8a990;font-size:0.9rem;margin-bottom:0.35rem"><span style="color:#2dd4bf;margin-top:0.15rem;flex-shrink:0">·</span> The Vanderbilt cautionary tale</li>
+            <li style="display:flex;align-items:flex-start;gap:0.5rem;color:#b8a990;font-size:0.9rem;margin-bottom:0.35rem"><span style="color:#2dd4bf;margin-top:0.15rem;flex-shrink:0">·</span> Family office operating system</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── HOW IT WORKS ── -->
+    <section style="padding:5rem 2rem;background:linear-gradient(180deg,#071520 0%,#0d2137 100%)">
+      <div style="text-align:center;margin-bottom:3.5rem">
+        <div class="section-label fade-up">The Process</div>
+        <h2 class="fade-up" style="font-family:'Cinzel',serif;font-size:clamp(1.6rem,3.5vw,2.6rem);color:#e8dcc8">
+          Built in <em style="font-family:'Cormorant Garamond',serif;font-style:italic;color:#c9a84c">Minutes.</em> Lasts Centuries.
+        </h2>
+        <p class="fade-up" style="color:#b8a990;margin-top:0.75rem;font-size:1.05rem">Answer a few questions. AI powered by Claude composes the rest.</p>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.5rem">
+        <div class="fade-up" style="padding:1.75rem;background:rgba(22,50,80,0.4);border:1px solid rgba(45,212,191,0.12);border-radius:4px">
+          <div style="font-family:'Cinzel',serif;font-size:2.2rem;color:rgba(45,212,191,0.22);line-height:1;margin-bottom:0.75rem">01</div>
+          <h3 style="font-family:'Cinzel',serif;font-size:0.9rem;color:#2dd4bf;margin-bottom:0.6rem">Answer the Questions</h3>
+          <p style="color:#b8a990;font-size:0.95rem;line-height:1.7">Claude guides you through thoughtful prompts about your values, your family, your calling, and your vision for generational impact.</p>
+        </div>
+        <div class="fade-up" style="padding:1.75rem;background:rgba(22,50,80,0.4);border:1px solid rgba(45,212,191,0.12);border-radius:4px">
+          <div style="font-family:'Cinzel',serif;font-size:2.2rem;color:rgba(45,212,191,0.22);line-height:1;margin-bottom:0.75rem">02</div>
+          <h3 style="font-family:'Cinzel',serif;font-size:0.9rem;color:#2dd4bf;margin-bottom:0.6rem">AI Composes Your Documents</h3>
+          <p style="color:#b8a990;font-size:0.95rem;line-height:1.7">Claude writes your Founder's Letter, Charitable Partners Addendum, and Master Blueprint in your voice — polished and permanent.</p>
+        </div>
+        <div class="fade-up" style="padding:1.75rem;background:rgba(22,50,80,0.4);border:1px solid rgba(45,212,191,0.12);border-radius:4px">
+          <div style="font-family:'Cinzel',serif;font-size:2.2rem;color:rgba(45,212,191,0.22);line-height:1;margin-bottom:0.75rem">03</div>
+          <h3 style="font-family:'Cinzel',serif;font-size:0.9rem;color:#2dd4bf;margin-bottom:0.6rem">Review &amp; Personalize</h3>
+          <p style="color:#b8a990;font-size:0.95rem;line-height:1.7">Read every word. Edit anything. Add your family's names, stories, and specific wishes. This is your document, not a template.</p>
+        </div>
+        <div class="fade-up" style="padding:1.75rem;background:rgba(22,50,80,0.4);border:1px solid rgba(45,212,191,0.12);border-radius:4px">
+          <div style="font-family:'Cinzel',serif;font-size:2.2rem;color:rgba(45,212,191,0.22);line-height:1;margin-bottom:0.75rem">04</div>
+          <h3 style="font-family:'Cinzel',serif;font-size:0.9rem;color:#2dd4bf;margin-bottom:0.6rem">Download &amp; Keep Forever</h3>
+          <p style="color:#b8a990;font-size:0.95rem;line-height:1.7">Save as PDF. Print it. Store it. Share it with your family. Your documents are yours — completely free, forever.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── IMAGE MOSAIC ── -->
+    <section>
+      <div style="display:grid;grid-template-columns:repeat(5,1fr);height:220px">
+        <div style="overflow:hidden"><img src="https://raw.githubusercontent.com/mikehinsvark/family-legacy/main/images/family_silhouette.jpg" alt="" style="width:100%;height:100%;object-fit:cover;filter:brightness(0.65) saturate(0.8);transition:all 0.5s ease;display:block" onmouseover="this.style.filter='brightness(0.9) saturate(1.1)';this.style.transform='scale(1.06)'" onmouseout="this.style.filter='brightness(0.65) saturate(0.8)';this.style.transform='scale(1)'" /></div>
+        <div style="overflow:hidden"><img src="https://raw.githubusercontent.com/mikehinsvark/family-legacy/main/images/multigenerational.jpg" alt="" style="width:100%;height:100%;object-fit:cover;filter:brightness(0.65) saturate(0.8);transition:all 0.5s ease;display:block" onmouseover="this.style.filter='brightness(0.9) saturate(1.1)';this.style.transform='scale(1.06)'" onmouseout="this.style.filter='brightness(0.65) saturate(0.8)';this.style.transform='scale(1)'" /></div>
+        <div style="overflow:hidden"><img src="https://raw.githubusercontent.com/mikehinsvark/family-legacy/main/images/infinity_pool.jpg" alt="" style="width:100%;height:100%;object-fit:cover;filter:brightness(0.65) saturate(0.8);transition:all 0.5s ease;display:block" onmouseover="this.style.filter='brightness(0.9) saturate(1.1)';this.style.transform='scale(1.06)'" onmouseout="this.style.filter='brightness(0.65) saturate(0.8)';this.style.transform='scale(1)'" /></div>
+        <div style="overflow:hidden"><img src="https://raw.githubusercontent.com/mikehinsvark/family-legacy/main/images/luxury_mansion.jpg" alt="" style="width:100%;height:100%;object-fit:cover;filter:brightness(0.65) saturate(0.8);transition:all 0.5s ease;display:block" onmouseover="this.style.filter='brightness(0.9) saturate(1.1)';this.style.transform='scale(1.06)'" onmouseout="this.style.filter='brightness(0.65) saturate(0.8)';this.style.transform='scale(1)'" /></div>
+        <div style="overflow:hidden"><img src="https://raw.githubusercontent.com/mikehinsvark/family-legacy/main/images/pool_sunset.jpg" alt="" style="width:100%;height:100%;object-fit:cover;filter:brightness(0.65) saturate(0.8);transition:all 0.5s ease;display:block" onmouseover="this.style.filter='brightness(0.9) saturate(1.1)';this.style.transform='scale(1.06)'" onmouseout="this.style.filter='brightness(0.65) saturate(0.8)';this.style.transform='scale(1)'" /></div>
+      </div>
+    </section>
+
+    <!-- ── LIFESTYLE ── -->
+    <section style="padding:5rem 2rem;background:#0d2137">
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:3rem;align-items:center">
+        <div>
+          <div class="section-label fade-up">The Life You're Building Toward</div>
+          <h2 class="fade-up" style="font-family:'Cinzel',serif;font-size:clamp(1.6rem,3vw,2.3rem);color:#e8dcc8;margin-bottom:0.5rem">
+            Freedom. <em style="font-family:'Cormorant Garamond',serif;font-style:italic;color:#c9a84c">Family.</em> Legacy.
+          </h2>
+          <div class="teal-divider fade-up"></div>
+          <p class="fade-up" style="color:#b8a990;font-size:1.05rem;line-height:1.8;margin-bottom:1.25rem">
+            The legacy documents are the foundation. The residual income is the engine. The life is the reward.
+          </p>
+          <p class="fade-up" style="color:#b8a990;font-size:1.05rem;line-height:1.8">
+            DBR's residual income model — built on recurring insurance premiums — creates the financial layer that funds your legacy permanently. Your documents define the mission. Your income funds it forever.
+          </p>
+        </div>
+        <div class="fade-up" style="border-radius:4px;overflow:hidden;border:1px solid rgba(45,212,191,0.2)">
+          <img src="https://raw.githubusercontent.com/mikehinsvark/family-legacy/main/images/pool_sunset.jpg" alt="The life you're building" style="width:100%;height:320px;object-fit:cover;display:block" />
+        </div>
+      </div>
+    </section>
+
+    <!-- ── CAUSE CATEGORIES ── -->
+    <section style="padding:5rem 2rem;background:#0d2137">
+      <div style="text-align:center;margin-bottom:2.5rem">
+        <div class="section-label fade-up">Your Mission</div>
+        <h2 class="fade-up" style="font-family:'Cinzel',serif;font-size:clamp(1.6rem,3.5vw,2.6rem);color:#e8dcc8">
+          Your Cause. <em style="font-family:'Cormorant Garamond',serif;font-style:italic;color:#c9a84c">Your Legacy.</em>
+        </h2>
+        <p class="fade-up" style="color:#b8a990;margin-top:0.75rem;font-size:1.05rem">Choose any two. We provide the top 15 independently rated charities for each.</p>
+      </div>
+      <div style="display:flex;flex-wrap:wrap;gap:0.75rem;justify-content:center">
+        <div class="fade-up" style="background:rgba(22,50,80,0.5);border:1px solid rgba(45,212,191,0.2);border-radius:3px;padding:0.55rem 1.1rem;font-family:'Cinzel',serif;font-size:0.65rem;letter-spacing:0.1em;color:#2dd4bf;transition:all 0.25s ease" onmouseover="this.style.background='rgba(45,212,191,0.15)'" onmouseout="this.style.background='rgba(22,50,80,0.5)'">Animal Welfare</div>
+        <div class="fade-up" style="background:rgba(22,50,80,0.5);border:1px solid rgba(45,212,191,0.2);border-radius:3px;padding:0.55rem 1.1rem;font-family:'Cinzel',serif;font-size:0.65rem;letter-spacing:0.1em;color:#2dd4bf;transition:all 0.25s ease" onmouseover="this.style.background='rgba(45,212,191,0.15)'" onmouseout="this.style.background='rgba(22,50,80,0.5)'">Child Protection</div>
+        <div class="fade-up" style="background:rgba(22,50,80,0.5);border:1px solid rgba(45,212,191,0.2);border-radius:3px;padding:0.55rem 1.1rem;font-family:'Cinzel',serif;font-size:0.65rem;letter-spacing:0.1em;color:#2dd4bf;transition:all 0.25s ease" onmouseover="this.style.background='rgba(45,212,191,0.15)'" onmouseout="this.style.background='rgba(22,50,80,0.5)'">Veterans &amp; Military</div>
+        <div class="fade-up" style="background:rgba(22,50,80,0.5);border:1px solid rgba(45,212,191,0.2);border-radius:3px;padding:0.55rem 1.1rem;font-family:'Cinzel',serif;font-size:0.65rem;letter-spacing:0.1em;color:#2dd4bf;transition:all 0.25s ease" onmouseover="this.style.background='rgba(45,212,191,0.15)'" onmouseout="this.style.background='rgba(22,50,80,0.5)'">Environment</div>
+        <div class="fade-up" style="background:rgba(22,50,80,0.5);border:1px solid rgba(45,212,191,0.2);border-radius:3px;padding:0.55rem 1.1rem;font-family:'Cinzel',serif;font-size:0.65rem;letter-spacing:0.1em;color:#2dd4bf;transition:all 0.25s ease" onmouseover="this.style.background='rgba(45,212,191,0.15)'" onmouseout="this.style.background='rgba(22,50,80,0.5)'">Medical Research</div>
+        <div class="fade-up" style="background:rgba(22,50,80,0.5);border:1px solid rgba(45,212,191,0.2);border-radius:3px;padding:0.55rem 1.1rem;font-family:'Cinzel',serif;font-size:0.65rem;letter-spacing:0.1em;color:#2dd4bf;transition:all 0.25s ease" onmouseover="this.style.background='rgba(45,212,191,0.15)'" onmouseout="this.style.background='rgba(22,50,80,0.5)'">Education</div>
+        <div class="fade-up" style="background:rgba(22,50,80,0.5);border:1px solid rgba(45,212,191,0.2);border-radius:3px;padding:0.55rem 1.1rem;font-family:'Cinzel',serif;font-size:0.65rem;letter-spacing:0.1em;color:#2dd4bf;transition:all 0.25s ease" onmouseover="this.style.background='rgba(45,212,191,0.15)'" onmouseout="this.style.background='rgba(22,50,80,0.5)'">Hunger Relief</div>
+        <div class="fade-up" style="background:rgba(22,50,80,0.5);border:1px solid rgba(45,212,191,0.2);border-radius:3px;padding:0.55rem 1.1rem;font-family:'Cinzel',serif;font-size:0.65rem;letter-spacing:0.1em;color:#2dd4bf;transition:all 0.25s ease" onmouseover="this.style.background='rgba(45,212,191,0.15)'" onmouseout="this.style.background='rgba(22,50,80,0.5)'">Faith &amp; Community</div>
+      </div>
+      <blockquote class="fade-up" style="max-width:580px;margin:2.5rem auto 0;text-align:center;font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.2rem;color:#e8dcc8;line-height:1.7;border-left:none;padding:0">
+        "The Vanderbilts had $200 billion and no documents like these.
+        <em style="color:#c9a84c">You now have something they never did.</em>"
+      </blockquote>
+      <p style="text-align:center;font-family:'Cinzel',serif;font-size:0.58rem;letter-spacing:0.15em;color:#b8a990;margin-top:0.75rem">FROM THE MASTER BLUEPRINT · DOCUMENT 3 OF 3</p>
+    </section>
+
+    <!-- ── TESTIMONIALS ── -->
+    <section style="padding:5rem 2rem;background:#071520">
+      <div style="text-align:center;margin-bottom:2.5rem">
+        <div class="section-label fade-up">What Families Say</div>
+        <h2 class="fade-up" style="font-family:'Cinzel',serif;font-size:clamp(1.6rem,3.5vw,2.6rem);color:#e8dcc8">
+          The Decision Is <em style="font-family:'Cormorant Garamond',serif;font-style:italic;color:#c9a84c">the Legacy.</em>
+        </h2>
+        <p class="fade-up" style="color:#b8a990;margin-top:0.5rem">The money is just how you fund it.</p>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.5rem">
+        <div class="legacy-card fade-up">
+          <p style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.1rem;color:#e8dcc8;line-height:1.8;margin-bottom:1.25rem">"I've been meaning to do this for 15 years. I finished in 8 minutes and cried reading it back to my wife. This is the most important document I've ever created."</p>
+          <div style="font-family:'Cinzel',serif;font-size:0.65rem;letter-spacing:0.1em;color:#2dd4bf">Family Foundation Founder</div>
+          <div style="font-family:'Cinzel',serif;font-size:0.58rem;letter-spacing:0.1em;color:#b8a990;margin-top:0.2rem">San Diego, CA</div>
+        </div>
+        <div class="legacy-card fade-up">
+          <p style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.1rem;color:#e8dcc8;line-height:1.8;margin-bottom:1.25rem">"As a DBR agent I share this with every prospect. It changes the conversation from 'selling insurance' to 'building a legacy.' Three families have already completed theirs."</p>
+          <div style="font-family:'Cinzel',serif;font-size:0.65rem;letter-spacing:0.1em;color:#2dd4bf">Business Owner &amp; DBR Agent</div>
+          <div style="font-family:'Cinzel',serif;font-size:0.58rem;letter-spacing:0.1em;color:#b8a990;margin-top:0.2rem">Phoenix, AZ</div>
+        </div>
+        <div class="legacy-card fade-up">
+          <p style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.1rem;color:#e8dcc8;line-height:1.8;margin-bottom:1.25rem">"I didn't think I had anything worth writing down. The questions made me realize I had everything. My kids are going to treasure this document."</p>
+          <div style="font-family:'Cinzel',serif;font-size:0.65rem;letter-spacing:0.1em;color:#2dd4bf">New DBR Agent</div>
+          <div style="font-family:'Cinzel',serif;font-size:0.58rem;letter-spacing:0.1em;color:#b8a990;margin-top:0.2rem">Nashville, TN</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── FINAL CTA ── -->
+    <section style="padding:6rem 2rem;background:linear-gradient(180deg,#071520 0%,#0a1c2e 50%,#071520 100%);border-top:1px solid rgba(45,212,191,0.1)">
+      <div style="text-align:center">
+        <div class="section-label fade-up">Your Legacy · Step by Step</div>
+        <h2 class="fade-up" style="font-family:'Cinzel',serif;font-size:clamp(1.8rem,4vw,3rem);color:#e8dcc8;margin-bottom:0.25rem">Build Your Family's</h2>
+        <h2 class="fade-up" style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(1.8rem,4vw,3rem);color:#c9a84c;margin-bottom:1.75rem">Legacy Today</h2>
+        <p class="fade-up" style="color:#b8a990;font-size:1.1rem;max-width:480px;margin:0 auto 2.5rem">
+          Answer a few questions. Claude writes the rest. Takes about 8 minutes. Lasts forever.
+        </p>
+        <div class="fade-up" style="max-width:480px;margin:0 auto;background:rgba(13,33,55,0.8);border:1px solid rgba(45,212,191,0.25);border-radius:6px;padding:2rem">
+          <div style="font-family:'Cinzel',serif;font-size:0.6rem;letter-spacing:0.18em;color:#b8a990;margin-bottom:1.25rem">
+            ACCESS THE COMPLETE FAMILY LEGACY PROGRAM &amp; BUILDER
+          </div>
+          <a href="https://claude.ai/project/01JTHKDMQBG2QNKDMJ6RQHQ8H" target="_blank" rel="noopener noreferrer"
+            class="btn-teal" style="display:block;width:100%;justify-content:center;font-size:0.8rem;padding:0.9rem 2rem;text-align:center">
+            Open Family Legacy Builder →
+          </a>
+          <p style="font-family:'Crimson Pro',serif;font-size:0.9rem;color:#b8a990;margin-top:0.9rem;line-height:1.6">
+            Powered by <strong style="color:#2dd4bf">Claude AI</strong> — live in your browser.<br />
+            Completely free. Your documents are yours to keep.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── FOOTER ── -->
+    <footer style="background:#040e18;border-top:1px solid rgba(45,212,191,0.1);padding:2rem;text-align:center">
+      <p style="font-family:'Cinzel',serif;font-size:0.58rem;letter-spacing:0.15em;color:#b8a990">
+        POWERED BY <a href="https://renewalsforlifestyle.com" target="_blank" rel="noopener noreferrer" style="color:#2dd4bf;text-decoration:none">DREAMS BUSINESS RESOURCES</a>
+        · THE RESIDUAL INCOME ENGINE THAT MAKES GENERATIONAL LEGACY POSSIBLE
+      </p>
+      <p style="font-family:'Cinzel',serif;font-size:0.52rem;letter-spacing:0.12em;color:#b8a990;margin-top:0.6rem">
+        © 2026 DREAMS BUSINESS RESOURCES · FAMILY LEGACY PROGRAM · ALL DOCUMENTS COMPLIMENTARY
+      </p>
+    </footer>
+
+  </div><!-- /site-wrapper -->
 </div>
 
 <script>
-// Fade-up scroll animation
-(function() {
-  const els = document.querySelectorAll('.fade-up');
-  const obs = new IntersectionObserver(
-    (entries) => entries.forEach((e) => { if (e.isIntersecting) e.target.classList.add('visible'); }),
-    { threshold: 0.08 }
-  );
-  els.forEach((el) => obs.observe(el));
-})();
+  // ── Sample panel toggle ──────────────────────────────────────
+  var sampleOpen = false;
+  function toggleSample() {
+    sampleOpen = !sampleOpen;
+    var panel = document.getElementById('sample-panel');
+    var btn = document.getElementById('see-sample-btn');
+    if (sampleOpen) {
+      panel.style.display = 'block';
+      btn.textContent = '✕ CLOSE SAMPLE';
+      btn.style.color = '#2dd4bf';
+      btn.style.borderBottom = '2px solid #2dd4bf';
+      panel.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    } else {
+      panel.style.display = 'none';
+      btn.textContent = 'SEE SAMPLE';
+      btn.style.color = '#b8a990';
+      btn.style.borderBottom = '2px solid transparent';
+    }
+  }
+
+  // ── Scroll fade-up animations ────────────────────────────────
+  (function() {
+    var els = document.querySelectorAll('.fade-up');
+    var obs = new IntersectionObserver(function(entries) {
+      entries.forEach(function(e) {
+        if (e.isIntersecting) e.target.classList.add('visible');
+      });
+    }, { threshold: 0.08 });
+    els.forEach(function(el) { obs.observe(el); });
+  })();
+
+  // ── Particle canvas ──────────────────────────────────────────
+  (function() {
+    var c = document.getElementById('particle-canvas');
+    if (!c) return;
+    var ctx = c.getContext('2d');
+    var W = 0, H = 0, raf = 0;
+    var pts = [];
+    for (var i = 0; i < 50; i++) {
+      pts.push({
+        x: Math.random() * 1080, y: Math.random() * 700,
+        vx: (Math.random() - 0.5) * 0.3, vy: (Math.random() - 0.5) * 0.2,
+        r: Math.random() * 1.5 + 0.3, a: Math.random() * 0.4 + 0.08
+      });
+    }
+    function resize() {
+      W = c.width = c.parentElement ? c.parentElement.offsetWidth : 1080;
+      H = c.height = c.parentElement ? c.parentElement.offsetHeight : 700;
+    }
+    resize();
+    window.addEventListener('resize', resize);
+    function draw() {
+      ctx.clearRect(0, 0, W, H);
+      pts.forEach(function(p) {
+        p.x += p.vx; p.y += p.vy;
+        if (p.x < 0) p.x = W; if (p.x > W) p.x = 0;
+        if (p.y < 0) p.y = H; if (p.y > H) p.y = 0;
+        ctx.beginPath(); ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+        ctx.fillStyle = 'rgba(45,212,191,' + p.a + ')'; ctx.fill();
+      });
+      raf = requestAnimationFrame(draw);
+    }
+    draw();
+  })();
 </script>
+
 </body>
 </html>
