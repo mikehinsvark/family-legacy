@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-label="Family Legacy heritage tree emblem">
+  <title>Family Legacy heritage tree emblem</title>
+  <rect x="10" y="10" width="236" height="236" rx="58" fill="#071520"/>
+  <rect x="16" y="16" width="224" height="224" rx="52" fill="none" stroke="#c9a84c" stroke-width="5" opacity=".92"/>
+  <path d="M128 183V118M128 124L87 91M128 124L169 91M87 92V78M169 92V78" fill="none" stroke="#2dd4bf" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="78" cy="68" r="18" fill="#c9a84c"/>
+  <circle cx="128" cy="54" r="21" fill="#e8dcc8"/>
+  <circle cx="178" cy="68" r="18" fill="#c9a84c"/>
+  <path d="M70 190h116" fill="none" stroke="#c9a84c" stroke-width="13" stroke-linecap="round"/>
+  <path d="M101 206h54" fill="none" stroke="#2dd4bf" stroke-width="9" stroke-linecap="round" opacity=".95"/>
+</svg>
